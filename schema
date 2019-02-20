@@ -1,0 +1,67 @@
+SCHEMA
+
+USERS TABLE
+
+|   COLUMN NAME   | Data Type |              Details              |
+|:---------------:|:---------:|:---------------------------------:|
+|        id       |  integer  |       not null, primary key       |
+|      email      |   string  | not null, primary key and indexed |
+|    first_name   |   string  |              not null             |
+|    last_name    |  string   |              not null             |
+| password_digest |  string   |              not null             |
+|  session_token  |  string   |    not null, unique and indexed   |
+|    created_at   |  datetime |              not null             |
+|    update_at    | datetime  |              not null             |
+
+
+SPOTS/LISTINGS TABLE 
+
+| Column Name   | Data Type | Details                        |
+|---------------|-----------|--------------------------------|
+| id            | integer   | not null, primary key          |
+| owner_id      | integer   | not null, foreign key, indexed |
+| title         | string    | not null                       |
+| address       | string    | not null, unique               |
+| city          | string    | not null, indexed              |
+| state         | string    | not null                       |
+| zip           | integer   | not null                       |
+| num_rooms     | integer   | not null                       |
+| num_bathrooms | integer   | not null                       |
+| available     | boolean   | not null                       |
+| price         | integer   | not null                       |
+| description   | text      | not null                       |
+| private_room  | boolean   | not null                       |
+| house         | boolean   | not null                       |
+| washer        | boolean   | not null                       |
+| dryer         | boolean   | not null                       |
+| parking_spot  | boolean   | not null                       |
+| tv            | boolean   | not null                       |
+| wifi          | boolean   | not null                       |
+| ac            | boolean   | not null                       |
+| kitchen       | boolean   | not null                       |
+| created_at    | datetime  | not null                       |
+
+
+BOOKINGS
+
+| id            | integer   | not null, primary key |
+|---------------|-----------|-----------------------|
+| listing_id    | integer   | not null, foreign key |
+| renter_id     | integer   | not null, foreign key |
+| trip_start    | datetime  | not null              |
+| trip_end      | datetime  | not null              |
+| num_of_guests | integer   | not null              |
+| create_at     | datetime  | not null              |
+
+
+REVIEWS
+
+| Column Name | Data Type | Details               |
+|-------------|-----------|-----------------------|
+| id          | integer   | not null, primary key |
+| listing_id  | integer   | not null, foreign key |
+| user_id     | integer   | not null, foreign key |
+| body        | text      | not null              |
+| star_review | integer   | not null              |
+| created_at  | datetime  | not null              |
+| edited_at   | datetime  | not null              |
