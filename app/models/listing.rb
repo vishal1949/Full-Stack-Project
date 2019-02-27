@@ -14,4 +14,23 @@
 #
 
 class Listing < ApplicationRecord
+    
+    validates :owner_id, :address, uniqueness: true, presence: true 
+    validates :title, :city, :state, :zip, presence: true
+    
+    belongs_to :user,
+        primary_key: :id,
+        foreign_key: :owner_id,
+        class_name: 'User'
+
+    has_one :amenity,
+        primary_key: :id,
+        foreign_key: :listing_id,
+        class_name: 'Amenity'
+    
+    has_many :bookings,
+        primary_key: :id,
+        foreign_key: :listing_id,
+        class_name: 'Booking'
+
 end
