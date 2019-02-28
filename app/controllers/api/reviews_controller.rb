@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
         @review = current_user.reviews.new(review_params)
         if @review.save 
             render :show
+        end
     end
 
     def update 
