@@ -14,17 +14,24 @@ class Navbar extends React.Component{
 
     render(){
         return(
-            <header>
-                <a href='' 
-                    onClick={e => {
-                        this.handleEvent(e);
-                        this.props.openModal("login")}}>Login
-                </a>
-                <a href=''
-                    onClick={e => {
-                        this.handleEvent(e);
-                        this.props.openModal("signup")}}>Sign up
-                </a>
+            <header className="main-navbar">
+                <img className='img' src="https://cdn.pixabay.com/photo/2018/05/08/21/27/airbnb-3383993_1280.png" alt=""/>
+                <div className='navbar-contents'>
+                    <a href='' className='nav-link'><p className='nav-tabs'>Become a host</p></a>
+                    <a href='' className='nav-link'><p className='nav-tabs'>Help</p></a>
+                    <a href='' className='nav-link'
+                        onClick={e => {
+                            this.handleEvent(e);
+                            this.props.openModal("login")
+                        }}><p className='nav-tabs'>Login</p>
+                    </a>
+                    <a href='' className='nav-link'
+                        onClick={e => {
+                            this.handleEvent(e);
+                            this.props.openModal("signup")
+                        }}><p className='nav-tabs'>Sign up</p>
+                    </a>
+                </div>
             </header>
         )
     }

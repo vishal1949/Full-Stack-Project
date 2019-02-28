@@ -4,8 +4,46 @@
 
 .login-form-container{
     display: block; 
-    border: 2px solid red;
+    border: 1px solid black;
     background: white;
-    padding: 20px;
+    padding: 32px;
+    width: 504px;
+    height: 363px;
+    align-items: center;
 }
 
+input#text-box{
+    width: 453px;
+    height: 24px;
+}
+
+.facebook-link{
+    display: inline-block;
+    text-align: center;
+    color: white;
+    height: 24px;
+    width: 456px;
+    background: rgb(66,103,178);
+    border-bottom: none;
+    border-radius: 5px;
+}
+.check-box:hover{
+    cursor: pointer;
+}
+button#session-submit{
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    width: 456px;
+    height: 40px;
+    border-radius: 5px;
+    background: lightcoral;
+}
+.session-submit:hover{
+    cursor: pointer;
+}
+
+input {
+    margin: 5px;
+}
