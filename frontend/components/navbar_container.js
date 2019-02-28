@@ -2,10 +2,11 @@ import { connect } from 'react-redux';
 import React from 'react';
 import {openModal} from '../actions/modal_actions';
 import Navbar from './navbar';
+import {logout} from '../actions/session_actions';
 
 
 const mapStateToProps = state => {
-    debugger
+    let currUser = state.session.currUser;
     //need a current user
     //set it to current user session state
     return({
@@ -15,7 +16,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return({
-        openModal: (formType) => dispatch(openModal(formType))
+        openModal: (formType) => dispatch(openModal(formType)),
+        logout: () => dispatch(logout())
     })
 }
 
