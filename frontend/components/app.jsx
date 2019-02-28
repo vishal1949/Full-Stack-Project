@@ -5,19 +5,21 @@ import {Route, Link} from 'react-router-dom'
 import Modal from './modal';
 import Navbar from './navbar';
 import NavbarContainer from './navbar_container';
+import HomeSplash from './homesplash';
+import {AuthRoute} from '../util/route_util';
 
 
 
 const App = () => (
-    
+
     <div>
         <Modal/>
         <header>
             <NavbarContainer/>
         </header>
-        {/* <Route exact path='/' component={} /> */}
-        <Route path='/login' component={LoginFormContainer} />
-        <Route path='/signup' component={SignupFormContainer}/>
+        <Route path='/' component={HomeSplash} />
+        <AuthRoute exact path='/login' component={LoginFormContainer} />
+        <AuthRoute exact path='/signup' component={SignupFormContainer}/>
     </div>
 )
 

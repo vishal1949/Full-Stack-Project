@@ -1,6 +1,7 @@
 //component 
 import React from 'react'
 import { withRouter } from "react-router";
+
 // import { Button, ButtonToolbar, Modal } from 'react-bootstrap';
 
 class SessionForm extends React.Component {
@@ -19,7 +20,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user).then(()=>{this.props.closeModal()});
   }
 
   update(field) {
@@ -29,15 +30,18 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    // return null;
+    if (this.props.errors.length !== 0){
+      return (
+        <ul id="errors">
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   signupCheck(formType) {
@@ -57,10 +61,10 @@ class SessionForm extends React.Component {
     }
     else {
       return (
-        <>
-          <div>Log in to continue</div>
+        <div>
+          <h2>Log in to continue</h2>
           <a className="facebook-link" href='https://www.facebook.com/'><b>Log in with Facebook</b></a>
-        </>
+        </div>
       )
     }
   }
@@ -71,11 +75,10 @@ class SessionForm extends React.Component {
     return (
 
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br />
+        <form onSubmit={this.handleSubmit} className="login-form-box" id='form-box'>
           {/* Please {this.props.formType} or {this.props.navLink} */}
           {this.renderErrors()}
-            <div onClick={this.props.closeModal} className="close-x">X</div>
+          <div onClick={this.props.closeModal} className="close-x">x</div>
           <div className="login-form">
             <br />
             {this.signupCheck(this.props.formType)}
@@ -86,7 +89,7 @@ class SessionForm extends React.Component {
             <input id= 'check-box' type="checkbox"/>
             <label> Remember me</label>
             <br/>
-            <button id="session-submit" type="submit">{this.props.formType}</button>
+            <button id="session-submit" type="submit" >{this.props.formType}</button>
           </div>
         </form>
       </div>

@@ -4,6 +4,7 @@
 
 .login-form-container{
     display: block; 
+    position: relative;
     border: 1px solid black;
     background: white;
     padding: 32px;
@@ -44,6 +45,41 @@ button#session-submit{
     cursor: pointer;
 }
 
+h2{
+    font-family: 'Raleway', sans-serif;
+    padding-bottom: 20px;
+    position: relative;
+    top: 10px;
+    // font-weight: 100;
+    margin: 0px;
+    
+}
+
+div.close-x{
+    display: inline-block;
+    top: -11px;
+    left: 0px;
+    position: absolute;
+    color: rgb(128,128,128);
+    font-family: 'Raleway', sans-serif;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: 100;
+}
+
+// ul#errors{
+
+// }
+
 input {
     margin: 5px;
 }
+
+form#form-box{
+    position: relative;
+}
+

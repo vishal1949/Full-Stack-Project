@@ -5,6 +5,9 @@ import Navbar from './navbar';
 
 
 const mapStateToProps = state => {
+    debugger
+    //need a current user
+    //set it to current user session state
     return({
 
     })
