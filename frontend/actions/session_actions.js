@@ -36,7 +36,7 @@ export const logout = () => dispatch => {
 }
 
 export const signup = (user) => dispatch => {
-    return SessionApiUtil.logout(user)
+    return SessionApiUtil.signup(user)
         .then((currUser => dispatch(receiveCurrentUser(currUser))),
          err => (dispatch(receiveSessionErrors(err.responseJSON)))) //currUser refers to current user
 }

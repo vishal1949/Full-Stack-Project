@@ -8,6 +8,7 @@
     "babel-loader": "^8.0.5",
     "lodash": "^4.17.11",
     "react": "^16.8.3",
+    "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.3",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
@@ -25,7 +26,8 @@
     "test": "test"
   },
   "scripts": {
-    "start": "webpack --mode=development --watch"
+    "start": "webpack --mode=development --watch",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  },
   "bugs": {
     "url": "https://github.com/vishal1949/Full-Stack-Project/issues"
   },
