@@ -69,7 +69,6 @@ class SessionForm extends React.Component {
                         <br />
                         {/* Please {this.props.formType} or {this.props.navLink} */}
                         {this.renderErrors()}
-                        <div onClick={this.props.closeModal} className="close-x">X</div>
                         <div className="login-form">
                             <br />
                             {this.signupCheck(this.props.formType)}
@@ -81,6 +80,7 @@ class SessionForm extends React.Component {
                             <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input" />
                             </label>
                             <br />
+                            <div onClick={this.props.closeModal} className="close-x">X</div>
                             <   input className="session-submit" type="submit" value={this.props.formType} />
                         </div>
                     </form>
