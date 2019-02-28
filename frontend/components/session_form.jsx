@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
 
   signupCheck(formType) {
 
-    if (formType === 'signup') {
+    if (formType === 'Sign up') {
       return (
         <>
           Sign up with Fakebook or Doogle

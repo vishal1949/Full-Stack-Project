@@ -15,7 +15,7 @@ class Navbar extends React.Component{
     render(){
         return(
             <header className="main-navbar">
-                <img className='img' src="https://cdn.pixabay.com/photo/2018/05/08/21/27/airbnb-3383993_1280.png" alt=""/>
+                <img className='img' src={window.images.stayBnbLogo} alt=""/>
                 <div className='navbar-contents'>
                     <a href='' className='nav-link'><p className='nav-tabs'>Become a host</p></a>
                     <a href='' className='nav-link'><p className='nav-tabs'>Help</p></a>

@@ -23,11 +23,11 @@ a:link { //maybe need this to be more specific but maybe not
 }
 
 p.nav-tabs{
-    font-weight: bold;
+    font-weight: 600;
 }
 
 p{
-    color: 	rgb(48,48,48);
+    color: 	rgb(72,72,72);
     font-size: 13px;
 }
 .navbar-contents{
@@ -39,6 +39,9 @@ p{
 .img {
     // display: flex;
     // justify-content: flex-start;
-    width: 80px;
-    height: 80px;
+    padding-left: 20px;
+    padding-top: 10px;
+    width: 40px;
+    height: 40px;
+
 }
