@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+
 class Navbar extends React.Component{
     constructor(props){
         super(props)
@@ -60,17 +61,11 @@ class Navbar extends React.Component{
                     <div className='navbar-contents'>
                         <a href='' className='nav-link'><p className='nav-tabs'>Add Listing</p></a>
                         <a href='' className='nav-link'><p className='nav-tabs'>Host</p></a>
-                        <a href='' className='nav-link'
-                            onClick={e => {
-                                this.handleEvent(e);
-                                this.props.openModal("login")
-                            }}><p className='nav-tabs'>Something 2</p>
+                        <a href='' className='nav-link'>
+                            <p className='nav-tabs'>Something 2</p>
                         </a>
-                        <a href='' className='nav-link'
-                            onClick={e => {
-                                this.handleEvent(e);
-                                this.props.openModal("signup")
-                            }}><p className='nav-tabs'>Something </p>
+                        <a href='' className='nav-link'>
+                            <p className='nav-tabs'>Something </p>
                         </a>
                         <a href='' className='nav-link ' onClick={this.logout}><p className='nav-tabs'>logout</p></a> 
                         <div href='' className='nav-link for-user'><img className='user nav-tabs circular-square' src='https://www.kwsme.com/wp-content/uploads/2016/06/login-user-icon.png'></img></div>

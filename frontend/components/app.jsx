@@ -17,9 +17,10 @@ const App = () => (
         <header>
             <NavbarContainer/>
         </header>
-        <Route path='/' component={HomeSplash} />
+        <Route exact path='/' component={HomeSplash} />
         <AuthRoute exact path='/login' component={LoginFormContainer} />
         <AuthRoute exact path='/signup' component={SignupFormContainer}/>
+        <Route path='/' component={HomeSplash} />
     </div>
 )
 
