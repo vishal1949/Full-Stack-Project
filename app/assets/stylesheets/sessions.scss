@@ -48,6 +48,34 @@ input#text-box{
 .check-box:hover{
     cursor: pointer;
 }
+
+div#or-line-combo{
+    box-sizing: border-box;
+    border: none;
+    border-top: 1px solid lightgray;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: -12px;
+}
+div#or{
+    display: inline-block;
+    width: 95%;
+    padding: 10px;
+    color: rgb(128,128,128); 
+    background-color: white;
+    text-align: center;
+}
+
+div#or::before, div#or::after{
+    display: inline-block;
+    width: 46%;
+    content: ' ';
+    padding: .1em;
+    border-top: 1px solid lightgray;
+}
+
+
 button#session-submit{
     display: inline-block;
     align-self: center;

@@ -111,11 +111,13 @@ class SessionForm extends React.Component {
             <br />
             <input id='text-box' type="password" placeholder="Password" value={this.state.password} onChange={this.update('password')} className="login-input" />
             <br/>
-            <input id= 'check-box' type="checkbox"/>
+            <input id='check-box' type="checkbox"/>
             <label> Remember me</label>
             <br/>
             <div id='signup-form'>
               <button id="session-submit" type="submit" >{this.props.formType}</button>
+              {/* <div id='or-line-combo'></div> */}
+              <div id='or'>or</div>
               <button id='session-submit' type='submit' onClick={this.demoLogin}>DEMO LOGIN</button>
             </div>
             <br/>
