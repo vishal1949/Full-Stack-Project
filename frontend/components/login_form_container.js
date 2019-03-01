@@ -10,7 +10,7 @@ const mapStateToProps = ({errors}) => {
     return({
         errors: errors.session,
         formType: 'Log in',
-        navLink: <Link to='/' onClick={(e) => openModal('Sign up')} >Sign up?</Link>
+        navLink: <Link to='/signup' onClick={(e) => openModal('Sign up')} >Sign up?</Link>
     })
 }
 
@@ -18,9 +18,9 @@ const mapDispatchToProps = dispatch => {
     return({
         processForm: (user) => dispatch(login(user)),
         otherForm: (
-            <button onClick={() => dispatch(openModal('Log in'))}>
-                Login
-            </button>
+            <Link to='/signup' onClick={() => dispatch(openModal('signup'))}>
+                Sign up
+            </Link>
         ),
         closeModal: () => dispatch(closeModal()),
         clearErrors: () => dispatch(clearErrors()),

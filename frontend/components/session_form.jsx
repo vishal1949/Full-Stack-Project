@@ -1,6 +1,7 @@
 //component 
 import React from 'react'
 import { withRouter } from "react-router";
+import {Link} from 'react-router-dom'
 
 // import { Button, ButtonToolbar, Modal } from 'react-bootstrap';
 
@@ -16,7 +17,7 @@ class SessionForm extends React.Component {
     
     this.demoLogin = this.demoLogin.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.checkFormtype = this.checkFormtype.bind(this);
+    this.changeModal = this.changeModal.bind(this);
   }
 
   handleSubmit(e) {
@@ -83,10 +84,14 @@ class SessionForm extends React.Component {
     this.props.closeModal();
   }
 
-  checkFormtype(){
-    
+  changeModal(){
+    debugger
+    if(this.props.formType === 'Sign up'){
+      return (<Link to="/login" onClick={(e) => this.props.otherForm()}>Log in</Link>)
+    }else{
+      return (<Link to="/signup" onClick={(e) => this.props.otherForm()}>Sign up</Link>)
+    }
   }
-
 
   render() {
     let message = ''
@@ -117,7 +122,7 @@ class SessionForm extends React.Component {
             <br/>
             <div className='login-message'>
               {message} 
-              {this.props.navLink} 
+              {this.props.otherForm} 
             </div>
           </div>
         </form>
