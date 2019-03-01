@@ -16,6 +16,7 @@ class SessionForm extends React.Component {
     
     this.demoLogin = this.demoLogin.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.checkFormtype = this.checkFormtype.bind(this);
   }
 
   handleSubmit(e) {
@@ -83,18 +84,22 @@ class SessionForm extends React.Component {
   }
 
   checkFormtype(){
-    if (this.props.formType === 'Sign up'){
-      
-    }
+    
   }
 
 
   render() {
+    let message = ''
+    if (this.props.formType === 'Sign up') {
+      message = "Already have an Staybnb account? ";
+    }else{
+      message = "Dont have an account? "
+    }
     return (
 
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box" id='form-box'>
-          {/* Please {this.props.formType} or {this.props.navLink} */}
+          
           {this.renderErrors()}
           <div onClick={this.props.closeModal} className="close-x">x</div>
           <div className="login-form">
@@ -109,6 +114,11 @@ class SessionForm extends React.Component {
             <br/>
             <button id="session-submit" type="submit" >{this.props.formType}</button>
             <button id='session-submit' type='submit' onClick={this.demoLogin}>DEMO LOGIN</button>
+            <br/>
+            <div className='login-message'>
+              {message} 
+              {this.props.navLink} 
+            </div>
           </div>
         </form>
       </div>
