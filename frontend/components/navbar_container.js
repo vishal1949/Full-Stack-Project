@@ -7,11 +7,11 @@ import {logout} from '../actions/session_actions';
 
 const mapStateToProps = state => {
     // debugger
-    let currUser = state.entities.users[state.session.id];
+    let id = state.session.id;
     //need a current user
     //set it to current user session state
     return({
-        currUser
+        id
     })
 }
 

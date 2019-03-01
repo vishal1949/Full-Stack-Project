@@ -8,7 +8,7 @@
 }
  .main-nav{border-bottom:2px solid rgb(0,0,0);padding-bottom:10px};
 
-a:link { //maybe need this to be more specific but maybe not
+a{ //maybe need this to be more specific but maybe not
     display: block;
     margin: 5px;
     color: black;
@@ -16,10 +16,34 @@ a:link { //maybe need this to be more specific but maybe not
     align-content: center;
     text-decoration: none;
     padding: 10px;
+    margin: 0;
+}
+
+img.user{
+    display: flex;
+    border-radius: 50%;
+    align-self: center;
+    // border: 2px solid red;
+    width: 30px;
+    height: 30px;
+    background-image: url('https://www.kwsme.com/wp-content/uploads/2016/06/login-user-icon.png');
+
+}
+
+a.nav-link{
+    align-items: center;
+}
+
+div.circular-square{
+    border-radius: 50%;
 }
 
 .nav-link:hover {
     border-bottom: 2px solid black;
+}
+
+div.for-user{
+    padding-top: 18px;  
 }
 
 p.nav-tabs{
