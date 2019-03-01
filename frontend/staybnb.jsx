@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {login, signup, logout} from './util/session_api_util'
 import configureStore from './store/store'
 import Root from './components/root';
+import {fetchListing, createListing} from './util/listing_api_util'
 
 document.addEventListener('DOMContentLoaded', () => {
    let store;
@@ -22,11 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(<Root store={store}/>, root);
 
  // @@@@@@@@@@@@@@@@@TESTING@@@@@@@@@@@@@@@@
-   //  window.store = store;
-   //  window.getState = store.getState;
-   //  window.dispatch = store.dispatch;
-   //  window.login = login;
-   //  window.signup = signup;
-   //  window.logout = logout;
+    window.store = store;
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
+    window.login = login;
+    window.signup = signup;
+    window.logout = logout;
+    window.fetchListing = fetchListing;
+    window.createListing = createListing;
  // @@@@@@@@@@@@@@@@@TESTING@@@@@@@@@@@@@@@@
 });

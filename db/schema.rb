@@ -10,30 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_005209) do
+ActiveRecord::Schema.define(version: 2019_03_01_193325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "amenities", force: :cascade do |t|
-    t.integer "listing_id", null: false
-    t.integer "num_rooms", null: false
-    t.integer "num_bathrooms", null: false
-    t.integer "price", null: false
-    t.text "description", null: false
-    t.boolean "private_room", null: false
-    t.boolean "house", null: false
-    t.boolean "washer", null: false
-    t.boolean "dryer", null: false
-    t.boolean "parking_spot", null: false
-    t.boolean "tv", null: false
-    t.boolean "wifi", null: false
-    t.boolean "ac", null: false
-    t.boolean "kitchen", null: false
-    t.boolean "available", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "bookings", force: :cascade do |t|
     t.integer "listing_id", null: false
@@ -54,6 +34,20 @@ ActiveRecord::Schema.define(version: 2019_02_27_005209) do
     t.integer "zip", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "num_rooms"
+    t.integer "num_bathrooms"
+    t.integer "price"
+    t.text "description"
+    t.boolean "private_room"
+    t.boolean "house"
+    t.boolean "washer"
+    t.boolean "dryer"
+    t.boolean "parking_spot"
+    t.boolean "tv"
+    t.boolean "wifi"
+    t.boolean "ac"
+    t.boolean "kitchen"
+    t.boolean "available"
     t.index ["city"], name: "index_listings_on_city", unique: true
     t.index ["owner_id"], name: "index_listings_on_owner_id", unique: true
   end

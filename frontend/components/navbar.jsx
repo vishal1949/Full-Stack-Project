@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 
 
@@ -24,7 +25,7 @@ class Navbar extends React.Component{
             return(
             <header className='main-header'>
             <div className='main-div'>
-                <img className='img' src={window.images.stayBnbLogo} alt="" />
+                <Link to='/' ><img className='img' src={window.images.stayBnbLogo} alt="" /></Link>
             </div>
             <div className='main-div'>
                 <header className="main-navbar">

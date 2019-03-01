@@ -23,12 +23,12 @@
 #
 
 class Amenity < ApplicationRecord
-    validates :listing_id, :num_rooms, :num_bathrooms, :price,
-        :description, :private_room, :house, :washer, :dryer, 
-        :parking_spot, :tv, :wifi, :ac, :kitchen, :available, presence: true 
+    # validates :listing_id, :num_rooms, :num_bathrooms, :price,
+    #     :description, :private_room, :house, :washer, :dryer, 
+    #     :parking_spot, :tv, :wifi, :ac, :kitchen, :available, presence: true 
 
-    belongs_to :listing,
-        primary_key: :id,
-        foreign_key: :listing_id,
-        class_name: 'Listing'
+    # belongs_to :listing,
+    #     primary_key: :id,
+    #     foreign_key: :listing_id,
+    #     class_name: 'Listing'
 end
