@@ -13,8 +13,9 @@ class SessionForm extends React.Component {
       first_name: "",
       last_name: ""
     };
+    
+    this.demoLogin = this.demoLogin.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
 
   handleSubmit(e) {
@@ -69,6 +70,23 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentWillUnmount(){
+    this.props.clearErrors();
+  }
+
+  demoLogin(e){
+    this.props.demoLogin({
+      email: 'demo@login',
+      password: 'password'
+    });
+    this.props.closeModal();
+  }
+
+  checkFormtype(){
+    if (this.props.formType === 'Sign up'){
+      
+    }
+  }
 
 
   render() {
@@ -90,6 +108,7 @@ class SessionForm extends React.Component {
             <label> Remember me</label>
             <br/>
             <button id="session-submit" type="submit" >{this.props.formType}</button>
+            <button id='session-submit' type='submit' onClick={this.demoLogin}>DEMO LOGIN</button>
           </div>
         </form>
       </div>

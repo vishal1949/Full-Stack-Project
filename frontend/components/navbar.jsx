@@ -6,14 +6,21 @@ class Navbar extends React.Component{
         super(props)
         this.state = this.props.session;
         this.handleEvent = this.handleEvent.bind(this);
+        this.logout = this.logout.bind(this);
     }
 
     handleEvent(e){
         e.preventDefault();
     }
 
-    render(){
+    logout(e){
+        e.preventDefault();
+        this.props.logout();
+    }
 
+    render(){
+        // debugger
+        
         return(
             <header className="main-navbar">
                 <img className='img' src={window.images.stayBnbLogo} alt=""/>
@@ -32,7 +39,7 @@ class Navbar extends React.Component{
                             this.props.openModal("signup")
                         }}><p className='nav-tabs'>Sign up</p>
                     </a>
-                    <a href='' className='nav-link' onClick={this.props.logout}><p className='nav-tabs'>logout</p></a>
+                    <a href='' className='nav-link' onClick={this.logout}><p className='nav-tabs'>logout</p></a>
                 </div>
             </header>
         )
