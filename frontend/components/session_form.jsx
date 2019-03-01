@@ -51,15 +51,14 @@ class SessionForm extends React.Component {
 
     if (formType === 'Sign up') {
       return (
-        <>
-          Sign up with Fakebook or Doogle
+        <div id='signup-form'>
           <br/>
           <br />
           <input id='text-box' type="text" placeholder="First name"value={this.state.first_name} onChange={this.update('first_name')} className="login-input" />
           <br />
           <input id='text-box' type="text" placeholder="Last name"value={this.state.last_name} onChange={this.update('last_name')} className="login-input" />
           <br />
-        </>
+        </div>
       );
     }
     else {
@@ -104,8 +103,6 @@ class SessionForm extends React.Component {
 
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box" id='form-box'>
-          
-          {this.renderErrors()}
           <div onClick={this.props.closeModal} className="close-x">x</div>
           <div className="login-form">
             <br />
@@ -117,13 +114,16 @@ class SessionForm extends React.Component {
             <input id= 'check-box' type="checkbox"/>
             <label> Remember me</label>
             <br/>
-            <button id="session-submit" type="submit" >{this.props.formType}</button>
-            <button id='session-submit' type='submit' onClick={this.demoLogin}>DEMO LOGIN</button>
+            <div id='signup-form'>
+              <button id="session-submit" type="submit" >{this.props.formType}</button>
+              <button id='session-submit' type='submit' onClick={this.demoLogin}>DEMO LOGIN</button>
+            </div>
             <br/>
             <div className='login-message'>
               {message} 
               {this.props.otherForm} 
             </div>
+            {this.renderErrors()}
           </div>
         </form>
       </div>

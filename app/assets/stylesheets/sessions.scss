@@ -9,19 +9,36 @@
     background: white;
     padding: 32px;
     width: 504px;
-    height: 363px;
+    height: 727px;
     align-items: center;
+}
+
+div.signup-form{
+    justify-content: center;
 }
 
 input#text-box{
     width: 453px;
     height: 24px;
+    border-radius: 3px;
+    align-self: center;
+    border: 1px solid lightgray;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 10px;
+    margin: 9px;
+}
+
+.box-and-password{
+    display: flex;
+    justify-content: space-between;
 }
 
 .facebook-link{
     display: inline-block;
     text-align: center;
     color: white;
+    padding-left: 26px;
     height: 24px;
     width: 456px;
     background: rgb(66,103,178);
@@ -33,13 +50,16 @@ input#text-box{
 }
 button#session-submit{
     display: inline-block;
+    align-self: center;
     text-align: center;
     font-size: 15px;
     color: white;
-    width: 456px;
-    height: 40px;
+    width: 474px;
+    height: 54px;
     border-radius: 5px;
-    background: lightcoral;
+    padding: 10px;
+    margin: 10px;
+    background: rgb(252,91,99);
 }
 .session-submit:hover{
     cursor: pointer;
