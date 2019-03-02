@@ -7,6 +7,11 @@ class ListingIndex extends React.Component{
         super(props)
     }
 
+
+    componentDidMount(){
+        this.props.fetchListings();
+    }
+
     render(){
         let listings_array = Object.values(this.props.listings)
         return(
