@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_01_193325) do
+ActiveRecord::Schema.define(version: 2019_03_01_230600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,8 +48,6 @@ ActiveRecord::Schema.define(version: 2019_03_01_193325) do
     t.boolean "ac"
     t.boolean "kitchen"
     t.boolean "available"
-    t.index ["city"], name: "index_listings_on_city", unique: true
-    t.index ["owner_id"], name: "index_listings_on_owner_id", unique: true
   end
 
   create_table "reviews", force: :cascade do |t|

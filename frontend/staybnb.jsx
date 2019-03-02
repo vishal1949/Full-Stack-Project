@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {login, signup, logout} from './util/session_api_util'
 import configureStore from './store/store'
 import Root from './components/root';
-import {fetchListing, createListing} from './util/listing_api_util'
+import {fetchListing, createListing, fetchListings} from './util/listing_api_util'
 
 document.addEventListener('DOMContentLoaded', () => {
    let store;
@@ -31,5 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.logout = logout;
     window.fetchListing = fetchListing;
     window.createListing = createListing;
+    window.fetchListings = fetchListings;
  // @@@@@@@@@@@@@@@@@TESTING@@@@@@@@@@@@@@@@
 });

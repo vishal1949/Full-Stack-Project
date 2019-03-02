@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginFormContainer from './login_form_container';
 import SignupFormContainer from './signup_form_container';
+import SessionForm from './session_form'
 import {Route, Link} from 'react-router-dom'
 import Modal from './modal';
 import Navbar from './navbar';
@@ -18,8 +19,8 @@ const App = () => (
             <NavbarContainer/>
         </header>
         <Route exact path='/' component={HomeSplash} />
-        <AuthRoute exact path='/login' component={LoginFormContainer} />
-        <AuthRoute exact path='/signup' component={SignupFormContainer}/>
+        <AuthRoute exact path='/login' component={HomeSplash} />
+        <AuthRoute exact path='/signup' component={HomeSplash}/>
         <Route path='/' component={HomeSplash} />
     </div>
 )

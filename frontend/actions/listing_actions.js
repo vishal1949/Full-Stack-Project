@@ -9,9 +9,10 @@ const receiveListing = (listing) => {
     })
 }
 
-const receiveListings = (listings) = {
+const receiveListings = (listings) => {
     return({
-        type: RECEIVE_LISTINGS = 'RECEIVE_LISTINGS'
+        type: RECEIVE_LISTINGS = 'RECEIVE_LISTINGS',
+        listings
     })
 }
 
@@ -28,5 +29,5 @@ export const fetchListing = (id) => dispatch => {
 
 export const fetchListings = () => {
     return (ListingApiUtil.fetchListings()
-        .then(listings => dispatch()))
+        .then(listings => dispatch(receiveListings(listings))))
 }
