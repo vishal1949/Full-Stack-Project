@@ -17,9 +17,8 @@ class ListingIndexItem extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="listing-index-item">
                 PLEASE SHOW UP ON THE PAGE
-                <br/>
                 <div>
                     <div>{this.homeType()}</div>
                     <div>{this.props.listing.num_rooms} BEDS</div>
@@ -27,6 +26,7 @@ class ListingIndexItem extends React.Component{
                 <div>{this.props.listing.title}</div>
                 <div>From ${this.props.listing.price} per night</div>
                 <div>STARS GO HERE</div>
+                ----------------------------------------
             </div>
         )
     }
