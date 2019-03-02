@@ -4,7 +4,9 @@
     border-bottom:1px solid lightgray;
     // padding-bottom:10px
 }
-
+.main-div{
+    // height: 60px;
+}
 .main-navbar{
     display: flex;
     justify-content: space-between;
@@ -45,6 +47,7 @@ img.user{
 a.nav-link{
     // padding-bottom:
     align-items: center;
+    padding-bottom: 22px;
 }
 
 div.circular-square{
