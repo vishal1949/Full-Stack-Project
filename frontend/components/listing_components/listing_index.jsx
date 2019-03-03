@@ -16,7 +16,7 @@ class ListingIndex extends React.Component{
         let listings_array = Object.values(this.props.listings)
         return(
             //each div contains a ListingIndexItem
-            <div>
+            <div className='contains-listing-index-item'>
                 {listings_array.map(listing => (
                     <ListingIndexItem 
                         listing={listing}

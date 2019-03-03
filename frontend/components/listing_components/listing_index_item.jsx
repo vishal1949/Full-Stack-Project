@@ -4,29 +4,46 @@ import React from 'react'
 class ListingIndexItem extends React.Component{
     constructor(props){
         super(props)
+        this.homeType = this.homeType.bind(this);
+        this.house = this.props.listing.house;
+        this.privateRoom = this.props.listing.private_room;
+
     }
 // have access to listing info and listing id
 
     homeType(){
-        if(this.props.listing.house){
-            return("ENTIRE HOUSE")
-        } else if (this.props.listing.privateRoom){
-            return ("PRIVATE ROOM")
+        // debugger
+        if(this.house === true){
+            return("ENTIRE HOUSE ")
+        } else if (this.privateRoom === true){
+            return ("PRIVATE ROOM ")
+        }else{
+            return "it doest work"
         }
+    }
+
+    startCount(){
+        //eventually will need reviews!
     }
 
     render(){
         return(
             <div className="listing-index-item">
-                PLEASE SHOW UP ON THE PAGE
-                <div>
-                    <div>{this.homeType()}</div>
+                <img src='https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'></img>
+                <div className='bed-and-room-info'>
+                    {this.homeType()}
+                    <span class="dot"> </span>
                     <div>{this.props.listing.num_rooms} BEDS</div>
                 </div>
-                <div>{this.props.listing.title}</div>
-                <div>From ${this.props.listing.price} per night</div>
-                <div>STARS GO HERE</div>
-                ----------------------------------------
+                <h3 className='title'>{this.props.listing.title}</h3>
+                <div className='price'>From ${this.props.listing.price} per night</div>
+                <div className='reviews'>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star"></span>
+                </div>
             </div>
         )
     }
