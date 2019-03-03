@@ -16,13 +16,16 @@ class ListingIndex extends React.Component{
         let listings_array = Object.values(this.props.listings)
         return(
             //each div contains a ListingIndexItem
-            <div className='contains-listing-index-item'>
-                {listings_array.map(listing => (
-                    <ListingIndexItem 
-                        listing={listing}
-                        key={listing.id}
-                    />
-                ))}
+            <div>
+                <h2 className='where-to-stay'>Where to stay</h2>
+                <div className='contains-listing-index-item'>
+                    {listings_array.map(listing => (
+                        <ListingIndexItem 
+                            listing={listing}
+                            key={listing.id}
+                        />
+                    ))}
+                </div>
             </div>
         )
     }

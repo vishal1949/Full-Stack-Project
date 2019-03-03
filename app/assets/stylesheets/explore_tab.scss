@@ -1,0 +1,54 @@
+.entire-tab{
+    display: flex;
+    // position: fixed;
+    margin-left: -10px;
+    width: 268px;
+    height: 72px;
+}
+
+.link-content{
+    display: flex;
+    align-items: center;
+    padding-right: 60px;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    margin-right: 20px;
+}
+
+// .link:hover{
+
+//     border-bottom: 2px solid black;
+//     padding-left: 0px;
+//     padding-right: 0px;
+//     padding-top: 25px; 
+//     // padding-bottom: 25px;
+//     margin: 8px;
+// }
+
+.link{
+    font-weight: 800 !important;
+
+}
+
+#listing:hover{
+    cursor: pointer;
+    // padding-left: 400px;
+}
+
+.link:hover{
+    padding: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid black;
+    
+}
+
+
+img.explore-img{
+    width: 96px;
+    height: 72px;
+}
+
+img.explore-img:hover{
+    cursor: pointer;
+}

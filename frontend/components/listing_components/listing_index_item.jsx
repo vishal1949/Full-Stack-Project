@@ -32,7 +32,7 @@ class ListingIndexItem extends React.Component{
                 <img src='https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'></img>
                 <div className='bed-and-room-info'>
                     {this.homeType()}
-                    <span class="dot"> </span>
+                    <span className="dot"> </span>
                     <div>{this.props.listing.num_rooms} BEDS</div>
                 </div>
                 <h3 className='title'>{this.props.listing.title}</h3>
