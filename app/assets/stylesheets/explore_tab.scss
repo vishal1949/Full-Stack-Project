@@ -15,16 +15,6 @@
     margin-right: 20px;
 }
 
-// .link:hover{
-
-//     border-bottom: 2px solid black;
-//     padding-left: 0px;
-//     padding-right: 0px;
-//     padding-top: 25px; 
-//     // padding-bottom: 25px;
-//     margin: 8px;
-// }
-
 .link{
     font-weight: 800 !important;
 
@@ -32,7 +22,6 @@
 
 #listing:hover{
     cursor: pointer;
-    // padding-left: 400px;
 }
 
 .link:hover{
@@ -41,6 +30,10 @@
     margin-right: 10px;
     border-bottom: 1px solid black;
     
+}
+
+.link{
+    padding: 10px;
 }
 
 
