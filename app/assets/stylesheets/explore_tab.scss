@@ -25,10 +25,13 @@
 }
 
 .link:hover{
-    padding: 0px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 0px;
     margin-left: 10px;
     margin-right: 10px;
-    border-bottom: 1px solid black;
+    text-decoration: underline;
     
 }
 
