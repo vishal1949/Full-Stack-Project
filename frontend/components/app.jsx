@@ -9,6 +9,7 @@ import NavbarContainer from './navbar_container';
 import HomeSplash from './homesplash';
 import {AuthRoute} from '../util/route_util';
 import ListingIndexContainer from './listing_components/listing_index_container';
+import ListingShowContainer from './listing_components/listing_show_contiainer';
 
 
 
@@ -22,7 +23,8 @@ const App = () => (
         <Route exact path='/' component={HomeSplash} />
         <AuthRoute exact path='/login' component={HomeSplash} />
         <AuthRoute exact path='/signup' component={HomeSplash}/>
-        <Route path='/listings' component={ListingIndexContainer}/>
+        <Route exact path='/listings' component={ListingIndexContainer}/>
+        <Route path='/listings/:listingId' component={ListingShowContainer} />
         <Route path='/' component={HomeSplash} />
     </div>
 )

@@ -1,0 +1,169 @@
+.entire-info{
+    margin-top: 24px;
+    margin-left: 520px;
+    margin-right: 448px;
+    width: 596px;
+}
+
+.maindisplay-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.home-type{
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #231341;
+}
+.listing-title{
+    margin: 0px;
+    padding-bottom: 5px;
+    font-size: bigger;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+
+}
+
+.icon-hometype{
+    display: flex;
+    font-weight: 500;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+}
+
+.sizing{
+    font-size: 13px;
+    padding-top: 3px;
+    // margin-right: 5px;
+}
+
+.city{
+    margin: 0px !important;
+    word-wrap: break-word !important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 200 !important;
+    line-height: 1.375em !important;
+    color: #484848 !important;
+    padding-bottom: 40px;
+}
+
+.bed-bath{
+    display: flex;
+    padding-top: 4px;
+    padding-left: 25px;
+    justify-content: space-between;
+    width: 255px;
+    height: 22px;
+    font-size: 15px;
+    font-weight: 200;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+}
+
+.description{
+    padding-top: 4px;
+    width: 560px;
+    padding-left: 25px;
+    height: 22px;
+    font-size: 15px;
+    font-weight: 200;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+}
+
+.sections{
+    padding-bottom: 12px;
+}
+
+.icontest{
+    padding-left: 12px;
+    font-size: 14px;
+
+}
+.icontest2{
+    padding-left: 13px;
+    font-size: 14px;
+}
+
+.gray-line{
+    display: block;
+    height: 0px;
+    margin-top: 20px;
+    border-bottom: 1px solid rgb(235,235,235);
+    width: 610px;
+}
+
+.description-full{
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 200 !important;
+    line-height: 1.375em !important;
+    color: #484848 !important;
+}
+.alone-icon{
+    padding-left: 3px;
+}
+
+.useless-link{
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(0,133,136);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.amenities{
+    padding-top: 32px;
+    font-size: 18px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+
+}
+
+.entire-imgs{
+    display: flex;
+    height: 590px;
+    width: 1896px;
+    border: 1px solid black;
+}
+
+.first-pic{
+    width: 948px;
+    border: 1px solid black;
+    height: inherit;
+    transition: transform .2s;
+    display: inline-block; 
+    overflow: hidden; 
+}
+
+.four-pics{
+    display: flex;
+    border: 1px solid black;
+    
+}
+
+.second-pic, .third-pic{
+    display: inline-block; 
+    width: 474px;
+    height: 294px;
+    transition: transform .2s;
+    
+
+}
+
+.first-pic:hover{
+    transform: scale(1.05);
+    overflow: hidden; 
+    
+}
+
+.second-pic:hover, .third-pic:hover{
+    transform: scale(1.03);
+    box-shadow: 3px 3px 1px #000000;
+}

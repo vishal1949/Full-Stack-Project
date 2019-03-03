@@ -4,15 +4,18 @@ import ListingIndexItem from './listing_index_item'
 
 class ListingIndex extends React.Component{
     constructor(props){
+        // debugger
         super(props)
     }
 
 
     componentDidMount(){
+        // debugger
         this.props.fetchListings();
     }
 
     render(){
+        // debugger
         let listings_array = Object.values(this.props.listings)
         return(
             //each div contains a ListingIndexItem

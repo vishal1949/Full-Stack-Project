@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 
 class ListingIndexItem extends React.Component{
     constructor(props){
@@ -28,7 +28,7 @@ class ListingIndexItem extends React.Component{
 
     render(){
         return(
-            <div className="listing-index-item">
+            <Link to={`listings/${this.props.listing.id}`} className="listing-index-item">
                 <img src='https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'></img>
                 <div className='bed-and-room-info'>
                     {this.homeType()}
@@ -44,7 +44,7 @@ class ListingIndexItem extends React.Component{
                     <span className="fa fa-star checked"></span>
                     <span className="fa fa-star"></span>
                 </div>
-            </div>
+            </Link>
         )
     }
 }
