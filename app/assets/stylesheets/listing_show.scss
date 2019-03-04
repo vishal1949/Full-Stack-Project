@@ -154,8 +154,13 @@
     width: 474px;
     height: 294px;
     transition: transform .3s;
-    
+    overflow: hidden;
 
+}
+
+.second-pic-img{
+    width: inherit;
+    height: inherit;
 }
 
 .first-pic:hover{
@@ -164,8 +169,9 @@
     
 }
 
-.second-pic:hover, .third-pic:hover{
+.second-pic-img:hover, .third-pic:hover{
     transform: scale(1.05);
+
     // box-shadow: 3px 3px 1px #000000
 }
 

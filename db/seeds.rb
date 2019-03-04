@@ -43,7 +43,7 @@ spot_five = Listing.create({owner_id: user_four[:id], title: "Beautiful Room", a
     price: 170, description: "The building is shaped like an L. The extension extends into a garden path circling around half the house.
         The second floor is smaller than the first, which allowed for a roof garden on two sides of the house. This floor has a very different style than the floor below.", 
     private_room: true, house: false, washer: false, dryer: false, 
-    parking_spot: false, tv: false, wifi: true, ac: false, kitchen: true})
+    parking_spot: true, tv: true, wifi: true, ac: false, kitchen: true})
 spot_six = Listing.create({owner_id: user_two[:id], title: "Beautiful apartment, no view", address: "3576 17th St", 
     city: "SF", state: "California", zip: 94110, num_rooms: 4, num_bathrooms: 3, available: true, 
     price: 110, description: "From the outside this house looks gorgeous. It has been built with white stones and has white cedar wooden decorations. Tall, squared windows allow enough light to enter the home and have been added to the house in a fairly asymmetrical pattern.", 

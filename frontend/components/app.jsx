@@ -2,7 +2,7 @@ import React from 'react';
 import LoginFormContainer from './login_form_container';
 import SignupFormContainer from './signup_form_container';
 import SessionForm from './session_form'
-import {Route, Link} from 'react-router-dom'
+import { Route, Link, Switch} from 'react-router-dom'
 import Modal from './modal';
 import Navbar from './navbar';
 import NavbarContainer from './navbar_container';
@@ -20,12 +20,14 @@ const App = () => (
         <header>
             <NavbarContainer/>
         </header>
-        <Route exact path='/' component={HomeSplash} />
-        <AuthRoute exact path='/login' component={HomeSplash} />
-        <AuthRoute exact path='/signup' component={HomeSplash}/>
-        <Route exact path='/listings' component={ListingIndexContainer}/>
-        <Route path='/listings/:listingId' component={ListingShowContainer} />
-        <Route path='/' component={HomeSplash} />
+        {/* <Route exact path='/' component={HomeSplash} /> */}
+        <Switch > 
+            <AuthRoute exact path='/login' component={HomeSplash} />
+            <AuthRoute exact path='/signup' component={HomeSplash}/>
+            <Route exact path='/listings' component={ListingIndexContainer}/>
+            <Route path='/listings/:listingId' component={ListingShowContainer} />
+            <Route path='/' component={HomeSplash} />
+        </Switch>
     </div>
 )
 

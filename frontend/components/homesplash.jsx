@@ -6,6 +6,7 @@ class HomeSplash extends Component {
         return(
 
             <div id='background-splash'>
+                {/* <p>hELOO</p> */}
                 <ExploreTab/>
                 {/* <input type="text" value="Search bar here" /> */}
             </div>

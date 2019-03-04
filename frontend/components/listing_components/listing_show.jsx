@@ -8,19 +8,19 @@ class Amenity extends React.Component{
     }
     iconCheck(){
         if(this.props.amenity === 'Kitchen'){
-            return <i class="fas fa-utensils amenitiy-icon"></i>
+            return <i className="fas fa-utensils amenitiy-icon"></i>
         }else if(this.props.amenity === 'Washer'){
-            return <i class="fas fa-box amenitiy-icon"></i>
+            return <i className="fas fa-box amenitiy-icon"></i>
         }else if(this.props.amenity === 'Dryer'){
-            return <i class="fas fa-box amenitiy-icon"></i>   
+            return <i className="fas fa-box amenitiy-icon"></i>   
         }else if(this.props.amenity === 'Tv'){
-            return <i class="fas fa-tv amenitiy-icon"></i>
+            return <i className="fas fa-tv amenitiy-icon"></i>
         }else if(this.props.amenity === 'Wifi'){
-            return <i class="fas fa-wifi amenitiy-icon"></i>
+            return <i className="fas fa-wifi amenitiy-icon"></i>
         }else if(this.props.amenity === 'Ac'){
-            return <i class="fas fa-square amenitiy-icon"></i>
+            return <i className="fas fa-square amenitiy-icon"></i>
         }else if(this.props.amenity === 'Parking'){
-            return <i class="fas fa-parking amenitiy-icon"></i>
+            return <i className="fas fa-parking amenitiy-icon"></i>
         }
     }
 
@@ -90,20 +90,22 @@ class ListingShow extends React.Component{
 
 
     render(){
+        if (!this.props.listing) {
+            return null;
+        }
         // debugger
         let elements = this.amenityCheck().map( amenity => <Amenity key={amenity} amenity={amenity}/>)
-
         return(
             <div>
                 <div className='entire-imgs'>
-                    <img className='first-pic' src="https://cdn.pixabay.com/photo/2015/10/20/18/57/furniture-998265_960_720.jpg" alt=""/>
+                    <img className='first-pic' src="https://cdn.pixabay.com/photo/2017/01/07/17/48/interior-1961070_960_720.jpg" alt=""/>
                     <div>
                         <div className='four-pics'>
                             <img className='second-pic' src="https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756__340.jpg" alt=""/>
                             <img className='third-pic' src="https://cdn.pixabay.com/photo/2014/08/11/21/40/wall-416062__340.jpg" alt=""/>
                         </div>    
                         <div className='four-pics'>
-                            <img className='second-pic' src="https://cdn.pixabay.com/photo/2018/01/24/15/08/live-3104077__340.jpg" alt=""/>
+                            <div className='second-pic'><img className='second-pic-img' src="https://cdn.pixabay.com/photo/2018/01/24/15/08/live-3104077__340.jpg" alt="" /></div>
                             <img className='third-pic' src="https://cdn.pixabay.com/photo/2016/04/18/08/51/bathroom-1336164__340.jpg" alt=""/>
                         </div>
                     </div>    

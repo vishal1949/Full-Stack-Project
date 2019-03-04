@@ -4,6 +4,7 @@ import {login, signup, logout} from './util/session_api_util'
 import configureStore from './store/store'
 import Root from './components/root';
 import {fetchListing, createListing, fetchListings} from './util/listing_api_util'
+import {createBooking, fetchBookings} from './util/booking_api_util'
 
 document.addEventListener('DOMContentLoaded', () => {
    let store;
@@ -32,5 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchListing = fetchListing;
     window.createListing = createListing;
     window.fetchListings = fetchListings;
+    window.createBooking = createBooking;
+    window.fetchBookings = fetchBookings;
  // @@@@@@@@@@@@@@@@@TESTING@@@@@@@@@@@@@@@@
 });
