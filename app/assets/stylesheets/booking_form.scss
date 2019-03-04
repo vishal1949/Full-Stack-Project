@@ -1,0 +1,52 @@
+.booking-form-box{
+    display: block;
+    border: 1px solid lightgray;
+    width: 326px;
+    height: 456px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    position: sticky;
+    top: 25px;
+}
+
+.from-price{
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.night{
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 13px ;
+    font-weight: 200 ;
+}
+
+.main-price-line{
+    display: flex;
+}
+
+.checked {
+  color: rgb(0,133,136);
+}
+.size {
+    padding-top: 10px;
+    font-size: x-small;
+}
+
+.gray-line{
+    display: block;
+    height: 0px;
+    margin-top: 20px;
+    border-bottom: 1px solid rgb(235,235,235);
+    width: 300px;
+}
+.dates{
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 12px;
+    padding-top: 20px;
+}

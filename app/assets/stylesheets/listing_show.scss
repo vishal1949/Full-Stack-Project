@@ -1,7 +1,7 @@
 .entire-info{
     margin-top: 24px;
     margin-left: 520px;
-    margin-right: 448px;
+    // margin-right: 448px;
     width: 596px;
 }
 
@@ -137,7 +137,7 @@
     width: 948px;
     border: 1px solid black;
     height: inherit;
-    transition: transform .2s;
+    transition: transform .3s;
     display: inline-block; 
     overflow: hidden; 
 }
@@ -145,6 +145,7 @@
 .four-pics{
     display: flex;
     border: 1px solid black;
+    overflow: hidden;
     
 }
 
@@ -152,7 +153,7 @@
     display: inline-block; 
     width: 474px;
     height: 294px;
-    transition: transform .2s;
+    transition: transform .3s;
     
 
 }
@@ -164,6 +165,36 @@
 }
 
 .second-pic:hover, .third-pic:hover{
-    transform: scale(1.03);
-    box-shadow: 3px 3px 1px #000000;
+    transform: scale(1.05);
+    // box-shadow: 3px 3px 1px #000000
+}
+
+
+.elements-amen{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 512px;
+    padding-left: 9px;
+}
+
+li.amenities-li{
+    display: block;
+    width: 256px;
+    height: 22px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 300 !important;
+    padding-bottom: 20px;
+    color: rgb(92,92,92);
+}
+
+.amenitiy-icon{
+    padding-left: -10px;
+    padding-right: 10px;
+}
+
+.includes-booking{
+    display: flex;
+    align-items: flex-start;
 }

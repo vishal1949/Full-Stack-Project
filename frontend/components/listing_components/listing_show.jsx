@@ -1,10 +1,46 @@
 import React from 'react'
+import BookingFormContainer from '../booking_components/booking_form_container'
+
+class Amenity extends React.Component{
+    constructor(props){
+        super(props)
+        this.iconCheck = this.iconCheck.bind(this);
+    }
+    iconCheck(){
+        if(this.props.amenity === 'Kitchen'){
+            return <i class="fas fa-utensils amenitiy-icon"></i>
+        }else if(this.props.amenity === 'Washer'){
+            return <i class="fas fa-box amenitiy-icon"></i>
+        }else if(this.props.amenity === 'Dryer'){
+            return <i class="fas fa-box amenitiy-icon"></i>   
+        }else if(this.props.amenity === 'Tv'){
+            return <i class="fas fa-tv amenitiy-icon"></i>
+        }else if(this.props.amenity === 'Wifi'){
+            return <i class="fas fa-wifi amenitiy-icon"></i>
+        }else if(this.props.amenity === 'Ac'){
+            return <i class="fas fa-square amenitiy-icon"></i>
+        }else if(this.props.amenity === 'Parking'){
+            return <i class="fas fa-parking amenitiy-icon"></i>
+        }
+    }
+
+    render(){
+        return(
+            <li className='amenities-li'>
+                {this.iconCheck()}
+                {this.props.amenity}
+            </li>
+        )
+    }
+}
+
 
 class ListingShow extends React.Component{
     constructor(props){
         super(props);
         // debugger
         this.homeType = this.homeType.bind(this);
+        this.amenityCheck = this.amenityCheck.bind(this);
     }
 
     componentDidMount() {
@@ -12,13 +48,35 @@ class ListingShow extends React.Component{
         this.props.fetchListing(this.props.listingId);
     }
 
-
-    amenityCheck(amenity){
-        if(amenity){
-            return (<div>Kitchen</div>);
+    amenityCheck(){
+        // debugger
+        let amenityArr = [];
+        // amenityArr.push(React.createElement('li', {}, 'kitchen'))
+        if(this.props.listing.kitchen){
+            amenityArr.push('Kitchen');
         }
+        if(this.props.listing.washer){
+            amenityArr.push('Washer');
+        }
+        if(this.props.listing.dryer){
+            amenityArr.push('Dryer');
+        }
+        if(this.props.listing.tv){
+            amenityArr.push('Tv');
+        }
+        if(this.props.listing.wifi){
+            amenityArr.push('Wifi');
+        }
+        if(this.props.listing.ac){
+            amenityArr.push('Ac');
+        }
+        if(this.props.listing.parking_spot){
+            amenityArr.push('Parking');
+        }
+        return amenityArr;
 
     }
+
 
     homeType() {
         if (this.props.listing.house) {
@@ -30,12 +88,15 @@ class ListingShow extends React.Component{
         }
     }
 
+
     render(){
         // debugger
+        let elements = this.amenityCheck().map( amenity => <Amenity key={amenity} amenity={amenity}/>)
+
         return(
             <div>
                 <div className='entire-imgs'>
-                    <img className='first-pic' src="https://cdn.pixabay.com/photo/2017/09/09/18/25/living-room-2732939_960_720.jpg" alt=""/>
+                    <img className='first-pic' src="https://cdn.pixabay.com/photo/2015/10/20/18/57/furniture-998265_960_720.jpg" alt=""/>
                     <div>
                         <div className='four-pics'>
                             <img className='second-pic' src="https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756__340.jpg" alt=""/>
@@ -47,6 +108,7 @@ class ListingShow extends React.Component{
                         </div>
                     </div>    
                 </div>
+            <div className='includes-booking'>
                 <div className="entire-info">
                     <div className='maindisplay-user'>
                         <div>
@@ -68,7 +130,7 @@ class ListingShow extends React.Component{
                         </div>
                     </div>
                     <div className='icon-hometype'>
-                        <i class="fas fa-map-marker-alt sizing alone-icon"></i>
+                        <i className="fas fa-map-marker-alt sizing alone-icon"></i>
                         <div className='icontest2'>Great Location</div> 
                     </div>
                         <div className='description'>This place is located at {this.props.listing.address}
@@ -81,11 +143,15 @@ class ListingShow extends React.Component{
                     <div className='useless-link'>Contact host</div>
                     <div className='gray-line'></div>
                     <h3 className='amenities'>Amenities</h3>
-                    <div>
-                        <div></div>
-                    </div>
-
+                    <ul className='elements-amen'>
+                        {elements}
+                    </ul>
+                    <div className='gray-line'></div>
+                    <div className='amenities'>Availability</div>
                 </div>
+                <BookingFormContainer price={this.props.listing.price} />
+
+            </div>
             </div>
         )
     }
