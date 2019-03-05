@@ -112,7 +112,7 @@ class SessionForm extends React.Component {
             <input id='text-box' type="password" placeholder="Password" value={this.state.password} onChange={this.update('password')} className="login-input" />
             <br/>
             <input id='check-box' type="checkbox"/>
-            <label> Remember me</label>
+            <label className='remember-me'>Remember me</label>
             <br/>
             <div id='signup-form'>
               <button id="session-submit" type="submit" >{this.props.formType}</button>

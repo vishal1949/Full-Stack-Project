@@ -7,11 +7,13 @@ class BookingForm extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            trip_start: '',
-            trip_end: '',
+            trip_start: null,
+            trip_end: null,
+            num_guests: 1,
         }
+        // debugger
         this.handleSubmit = this.handleSubmit.bind(this);
-
+        this.pluralCheck = this.pluralCheck.bind(this);
     }
 
     handleSubmit(e) {
@@ -26,7 +28,19 @@ class BookingForm extends React.Component{
         })
     }
 
+    pluralCheck(){
+        if (this.state.num_guests > 1){
+            return 'guests';
+        }
+        else {
+            return 'guest';
+        }
+    }
+
     render(){
+        // debugger
+        console.log(this.state.trip_start);
+        console.log(this.state.trip_end);
         return(
             <div className='booking-form-box'>
                 <div className='main-price-line'>
@@ -40,30 +54,34 @@ class BookingForm extends React.Component{
                     <span className="fa fa-star checked size"></span>
                     <span className="fa fa-star size"></span>
                 </div>
-                <div className='gray-line'></div>
+                <div className='other-gray-line'></div>
                 <div className='dates'>Dates</div>
                 <form className='booking-form' onSubmit={this.handleSubmit}>
-                    {/* <input className='date-input' type="date" placeHolder='Check in' value={this.state.trip_start}/>
-                    <input className='date-input' type="date" placeHolder='Check out' value={this.state.trip_end}/> */}
                     <DateRangePicker
                         //endDate, startDate
-                        startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+                        startDate={this.state.trip_start} // momentPropTypes.momentObj or null,
                         startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
-                        endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+                        endDate={this.state.trip_end} // momentPropTypes.momentObj or null,
                         endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-                        onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+                        onDatesChange={({ startDate, endDate }) => this.setState({ trip_start: startDate, trip_end: endDate })} // PropTypes.func.isRequired,
+                        //this.setState is altering our current state;
                         focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
                         onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                        startDatePlaceholderText='Check in'
+                        endDatePlaceholderText='Check out'
                     />
-                    <datalist>
-                        <div>
-                            Adults
-                            <div>
-                                <div>minus circle</div>
-                                <div></div>
-                            </div>
+                    <div className='dates'>Guests</div>
+                    <div className='guest-button'>{this.state.num_guests} {this.pluralCheck()}</div>
+                    <button className='request-button'>Request to Book</button>
+                    <div className='nocharge'>You won't be charged yet</div>
+                    <div className='other-gray-line'></div>
+                    <div className='includes-lightbulb'>
+                        <div className='extra-bot-stuff'>
+                            <div className='mind'>This place is on people's mind</div>
+                            <div className='views'>It's been viewed 500+ times in the past week</div>
                         </div>
-                    </datalist>
+                        <img className='light' src="https://img.icons8.com/color/48/000000/light-on.png"/>
+                    </div>
                 </form>
             </div>
         )

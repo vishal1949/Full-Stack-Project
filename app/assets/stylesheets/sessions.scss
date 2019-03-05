@@ -45,7 +45,11 @@ input#text-box{
     border-bottom: none;
     border-radius: 5px;
 }
-.check-box:hover{
+#check-box{
+    margin-left: 10px;
+    width: 15px;
+}
+#check-box:hover{
     cursor: pointer;
 }
 
@@ -93,6 +97,11 @@ button#session-submit{
     cursor: pointer;
 }
 
+.remember-me{
+    padding-left: 5px;
+    font-family: 'Raleway', sans-serif;    
+}
+
 h2{
     font-family: 'Raleway', sans-serif;
     padding-bottom: 20px;
@@ -126,7 +135,8 @@ div.close-x{
 div.login-message{
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
 }
 
 input {

@@ -40,12 +40,12 @@
     font-size: x-small;
 }
 
-.gray-line{
+.other-gray-line{
     display: block;
     height: 0px;
     margin-top: 20px;
     border-bottom: 1px solid rgb(235,235,235);
-    width: 300px;
+    width: 307px;
 }
 .dates{
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
@@ -54,9 +54,72 @@
 }
 
 .booking-form{
-    display: flex;
+    // display: flex;
 }
 
-.date-input{
-    
+.guest-button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 280px;
+    height: 35px;
+    border-radius: 2px;
+    padding-left: 18px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-right: 8px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(118,118,118);
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+
+}
+.request-button{
+    width: 308px;
+    height: 46px;
+    border-radius: 4px;
+    padding-left: 18px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-right: 8px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 17px;
+    font-weight: 300;
+    color: white;
+    background-color: rgb(241,90,95);
+    margin-bottom: 14px;
+    border: 2px solid rgb(241,90,95);
+}
+
+.nocharge{
+    text-align: center;
+    font-size: 11px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    margin-bottom: 32px;
+}
+
+.includes-lightbulb{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+}
+
+.light{
+    width: 48px;
+    height: 45px;
+}
+
+.extra-bot-stuff{
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 14px;
+}
+
+.mind{
+    padding-bottom: 10px;
+}
+
+.views{
+    font-weight: 100;
 }
