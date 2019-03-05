@@ -46,36 +46,36 @@ class Navbar extends React.Component{
                                     }}><p className='nav-tabs'>Login</p>
                                 </a>
                             </div>
-                            <div>graybar</div>
                         </header>
                     </div >
                 </header >
+                    <div className='gray-bar'></div>
+
             </>
             )
         }else {
             return (
-                //this has to have logout as a dropdown
-                <>
+            <>
             <header className='main-header'>
-            <div className='main-div'>
-                <img className='img' src={window.images.stayBnbLogo} alt="" />
-            </div>
-            <div className='main-div'>
-                <header className="main-navbar">
-                    <div className='navbar-contents'>
-                        <a href='' className='nav-link'><p className='nav-tabs'>Add Listing</p></a>
-                        <a href='' className='nav-link'><p className='nav-tabs'>Host</p></a>
-                        <a href='' className='nav-link'>
-                            <p className='nav-tabs'>Something 2</p>
-                        </a>
-                        <a href='' className='nav-link'>
-                            <p className='nav-tabs'>Something </p>
-                        </a>
-                        <a href='' className='nav-link ' onClick={this.logout}><p className='nav-tabs'>logout</p></a> 
-                        <div href='' className='for-user'><img className='user circular-square' src='https://www.kwsme.com/wp-content/uploads/2016/06/login-user-icon.png'></img></div>
-                    </div>
-                </header>
-            </div>
+                <div className='main-div'>
+                    <Link to='/' ><img className='img' src={window.images.stayBnbLogo} alt="" /></Link>
+                </div>
+                <div className='main-div'>
+                    <header className="main-navbar">
+                        <div className='navbar-contents'>
+                            <a href='' className='nav-link'><p className='nav-tabs'>Add Listing</p></a>
+                            <a href='' className='nav-link'><p className='nav-tabs'>Host</p></a>
+                            <a href='' className='nav-link'>
+                                <p className='nav-tabs'>Something 2</p>
+                            </a>
+                            <a href='' className='nav-link'>
+                                <p className='nav-tabs'>Something </p>
+                            </a>
+                            <a href='' className='nav-link ' onClick={this.logout}><p className='nav-tabs'>logout</p></a> 
+                            <div href='' className='for-user'><img className='user circular-square' src='https://www.kwsme.com/wp-content/uploads/2016/06/login-user-icon.png'></img></div>
+                        </div>
+                    </header>
+                </div>
             </header>
             <div className='gray-bar'></div>
             </>
