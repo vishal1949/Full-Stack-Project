@@ -23,35 +23,39 @@ class Navbar extends React.Component{
     render(){
         if (this.props.id === null){
             return(
-            <header className='main-header'>
-                <div className='main-div'>
-                    <Link to='/' ><img className='img' src={window.images.stayBnbLogo} alt="" /></Link>
-                </div>
-                <div className='main-div'>
-                    <header className="main-navbar">
-                        <div className='navbar-contents'>
-                            <a href='' className='nav-link'><p className='nav-tabs'>Become a host</p></a>
-                            <a href='' className='nav-link'><p className='nav-tabs'>Help</p></a>
-                            <a href='' className='nav-link'
-                                onClick={e => {
-                                    this.handleEvent(e);
-                                    this.props.openModal("signup")
-                                }}><p className='nav-tabs'>Sign up</p>
-                            </a>
-                            <a href='' className='nav-link'
-                                onClick={e => {
-                                    this.handleEvent(e);
-                                    this.props.openModal("login")
-                                }}><p className='nav-tabs'>Login</p>
-                            </a>
-                        </div>
-                    </header>
-                </div >
-            </header >
+            <>
+                <header className='main-header'>
+                    <div className='main-div'>
+                        <Link to='/' ><img className='img' src={window.images.stayBnbLogo} alt="" /></Link>
+                    </div>
+                    <div className='main-div'>
+                        <header className="main-navbar">
+                            <div className='navbar-contents'>
+                                <a href='' className='nav-link'><p className='nav-tabs'>Become a host</p></a>
+                                <a href='' className='nav-link'><p className='nav-tabs'>Help</p></a>
+                                <a href='' className='nav-link'
+                                    onClick={e => {
+                                        this.handleEvent(e);
+                                        this.props.openModal("signup")
+                                    }}><p className='nav-tabs'>Sign up</p>
+                                </a>
+                                <a href='' className='nav-link'
+                                    onClick={e => {
+                                        this.handleEvent(e);
+                                        this.props.openModal("login")
+                                    }}><p className='nav-tabs'>Login</p>
+                                </a>
+                            </div>
+                            <div>graybar</div>
+                        </header>
+                    </div >
+                </header >
+            </>
             )
         }else {
             return (
                 //this has to have logout as a dropdown
+                <>
             <header className='main-header'>
             <div className='main-div'>
                 <img className='img' src={window.images.stayBnbLogo} alt="" />
@@ -73,6 +77,8 @@ class Navbar extends React.Component{
                 </header>
             </div>
             </header>
+            <div className='gray-bar'></div>
+            </>
             )
         }
     }
