@@ -152,7 +152,7 @@ class ListingShow extends React.Component{
                     <div className='gray-line'></div>
                     <div className='amenities'>Availability</div>
                 </div>
-                <BookingFormContainer price={this.props.listing.price} />
+                <BookingFormContainer price={this.props.listing.price} listingId={this.props.listingId} />
 
             </div>
             </div>

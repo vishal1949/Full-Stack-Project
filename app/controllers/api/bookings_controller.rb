@@ -1,8 +1,9 @@
 class Api::BookingsController < ApplicationController
     def create
         @booking = Booking.new(booking_params)
+        # debugger
         @booking.renter_id = current_user.id 
-        if @booking.save
+        if @booking.save!
             render json:  "Booking has been made!"
         else
             render json: @booking.errors.full_messages, status: 422

@@ -28,6 +28,9 @@ export const fetchListing = (id) => dispatch => {
 }
 
 export const fetchListings = () => dispatch => {
+    // debugger
     return (ListingApiUtil.fetchListings()
-        .then(listings => dispatch(receiveListings(listings))))
+        .then(listings => 
+            dispatch(receiveListings(listings)
+            )))
 }

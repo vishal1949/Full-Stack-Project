@@ -6,7 +6,9 @@ import 'react-dates/lib/css/_datepicker.css';
 class BookingForm extends React.Component{
     constructor(props){
         super(props)
+        // debugger
         this.state = {
+            listing_id: this.props.listingId,
             trip_start: null,
             trip_end: null,
             num_guests: 1,
@@ -18,7 +20,10 @@ class BookingForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
+        this.state.trip_start = this.state.trip_start.format().toString();
+        this.state.trip_end = this.state.trip_end.format().toString();
         const booking = Object.assign({}, this.state);
+        // debugger
         this.props.createBooking(booking);
     }
 
@@ -39,8 +44,14 @@ class BookingForm extends React.Component{
 
     render(){
         // debugger
-        // console.log(this.state.trip_start);
-        // console.log(this.state.trip_end);
+        if( this.state.trip_end !== null && this.state.trip_start !== null){
+            // debugger
+            // this.state.trip_start = this.state.trip_start.format();
+            // this.state.trip_end = this.state.trip_end.format();
+            console.log(this.state.trip_end.format());
+            console.log(this.state.trip_start);
+        }
+        // debugger
         return(
             <div className='booking-form-box'>
                 <div className='main-price-line'>
@@ -63,7 +74,7 @@ class BookingForm extends React.Component{
                         startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
                         endDate={this.state.trip_end} // momentPropTypes.momentObj or null,
                         endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-                        onDatesChange={({ startDate, endDate }) => this.setState({ trip_start: startDate, trip_end: endDate })} // PropTypes.func.isRequired,
+                        onDatesChange={({ startDate, endDate }) => this.setState({ trip_start: startDate , trip_end: endDate  })} // PropTypes.func.isRequired,
                         //this.setState is altering our current state;
                         focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
                         onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
@@ -72,7 +83,7 @@ class BookingForm extends React.Component{
                     />
                     <div className='dates'>Guests</div>
                     <div className='guest-button'>{this.state.num_guests} {this.pluralCheck()}</div>
-                    <button className='request-button'>Request to Book</button>
+                    <button type='submit' className='request-button'>Request to Book</button>
                     <div className='nocharge'>You won't be charged yet</div>
                     <div className='other-gray-line'></div>
                     <div className='includes-lightbulb'>
