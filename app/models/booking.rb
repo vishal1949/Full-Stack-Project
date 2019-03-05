@@ -14,7 +14,6 @@
 
 class Booking < ApplicationRecord
     validates :listing_id, :renter_id, :trip_end, :trip_start, :num_guests, presence: true
-    validates :listing_id, :renter_id, uniqueness: true;
     belongs_to :renter,
         primary_key: :id,
         foreign_key: :renter_id,

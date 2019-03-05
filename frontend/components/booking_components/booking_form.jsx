@@ -16,15 +16,34 @@ class BookingForm extends React.Component{
         // debugger
         this.handleSubmit = this.handleSubmit.bind(this);
         this.pluralCheck = this.pluralCheck.bind(this);
+        this.guestHandler = this.guestHandler.bind(this);
+        this.bookCheck = this.bookCheck.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.state.trip_start = this.state.trip_start.format().toString();
-        this.state.trip_end = this.state.trip_end.format().toString();
-        const booking = Object.assign({}, this.state);
-        // debugger
-        this.props.createBooking(booking);
+        if(this.state.trip_end !== null && this.state.trip_start !== null){
+            debugger
+            this.state.trip_start = this.state.trip_start._d;
+            this.state.trip_end = this.state.trip_end._d;
+            const booking = Object.assign({}, this.state);
+            debugger
+            this.props.createBooking(booking).then(() => {
+                debugger
+                this.props.history.push('/');
+                alert("Booking has been made!");
+            });
+        }
+    }
+
+    bookCheck(){
+        debugger
+        this.bookings = this.props.fetchBookings();
+        console.log(this.bookings);
+    }
+
+    componentDidMount(){
+        this.props.fetchBookings();
     }
 
     update(field){
@@ -42,16 +61,27 @@ class BookingForm extends React.Component{
         }
     }
 
+
+    guestHandler(e){
+        e.preventDefault();
+        document.getElementsByClassName('find-with')[0].classList.add('dropdown-content')
+        // debugger
+        // this.found = document.getElementsByClassName('find-with');
+        // this.found.classList.add('dropdown-content');
+        // this.found.classList.remove('find-with');
+    }
+
     render(){
         // debugger
         if( this.state.trip_end !== null && this.state.trip_start !== null){
             // debugger
             // this.state.trip_start = this.state.trip_start.format();
             // this.state.trip_end = this.state.trip_end.format();
-            console.log(this.state.trip_end.format());
-            console.log(this.state.trip_start);
+            // console.log(this.state.trip_end.format());
+            // console.log(this.state.trip_start);
         }
         // debugger
+        // if (bookings.length < 1) return null;
         return(
             <div className='booking-form-box'>
                 <div className='main-price-line'>
@@ -82,7 +112,17 @@ class BookingForm extends React.Component{
                         endDatePlaceholderText='Check out'
                     />
                     <div className='dates'>Guests</div>
-                    <div className='guest-button'>{this.state.num_guests} {this.pluralCheck()}</div>
+                    <div onClick={(event) => this.guestHandler(event)} className='guest-button'>{this.state.num_guests} {this.pluralCheck()}</div>
+                    <div className='find-with'>
+                        <div className='adults-children'>Adults</div>
+                        <div className='adults-children'>Children
+                            <div className='age-restricts'>Ages 2 - 12</div>
+                        </div>
+                        <div className='adults-children'>Infants
+                            <div className='age-restricts'>Under 2</div>
+                        </div>
+                        <div className='close-dropdown'>Close</div>
+                    </div>
                     <button type='submit' className='request-button'>Request to Book</button>
                     <div className='nocharge'>You won't be charged yet</div>
                     <div className='other-gray-line'></div>

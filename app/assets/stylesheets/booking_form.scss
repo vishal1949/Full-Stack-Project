@@ -74,6 +74,8 @@
     color: rgb(118,118,118);
     margin-bottom: 20px;
     border: 1px solid lightgray;
+    transition: transform .3s;
+    position: relative;
 
 }
 .request-button{
@@ -122,4 +124,49 @@
 
 .views{
     font-weight: 100;
+}
+
+.find-with{
+    display: none;
+}
+
+.dropdown-content {
+    display: flex;
+    z-index: 5;
+    transition: transform .3s;
+    position: absolute;
+    width: 308px;
+    height: 240px;
+    // padding: 0px 16px;
+    flex-direction: column;
+    align-content: space-between;
+    background: white;
+    border: 1px solid lightgray;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+}
+
+.adults-children{
+    display: inline-block;
+    z-index: 5;
+    padding: 16px 15px;
+    // border: 1px solid blue;
+}
+
+.age-restricts{
+    font-size: 13px;
+    padding-top: 7px;
+    color: gray;
+}
+
+.close-dropdown{
+    display: flex;
+    margin-top: 10px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    justify-content: flex-end;
+    padding-right: 15px;
+    color: rgb(50,132,137);
+}
+
+.close-dropdown:hover{
+    cursor: pointer;
 }
