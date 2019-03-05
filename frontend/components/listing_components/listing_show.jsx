@@ -98,10 +98,11 @@ class ListingShow extends React.Component{
         return(
             <div>
                 <div className='entire-imgs'>
-                    <img className='first-pic' src="https://cdn.pixabay.com/photo/2017/01/07/17/48/interior-1961070_960_720.jpg" alt=""/>
+                
+                    <img className='first-pic' src="https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756__340.jpg" alt=""/>
                     <div>
                         <div className='four-pics'>
-                            <img className='second-pic' src="https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756__340.jpg" alt=""/>
+                            <img className='second-pic' src="https://cdn.pixabay.com/photo/2017/01/07/17/48/interior-1961070_960_720.jpg" alt=""/>
                             <img className='third-pic' src="https://cdn.pixabay.com/photo/2014/08/11/21/40/wall-416062__340.jpg" alt=""/>
                         </div>    
                         <div className='four-pics'>

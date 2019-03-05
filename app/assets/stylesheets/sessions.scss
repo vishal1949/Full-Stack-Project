@@ -9,7 +9,7 @@
     background: white;
     padding: 32px;
     width: 504px;
-    height: 727px;
+    height: 670px;
     align-items: center;
 }
 
@@ -36,14 +36,15 @@ input#text-box{
 
 .facebook-link{
     display: inline-block;
+    margin-left: 9px;
     text-align: center;
     color: white;
-    padding-left: 26px;
+    padding-left: 9px;
     height: 24px;
     width: 456px;
     background: rgb(66,103,178);
     border-bottom: none;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 #check-box{
     margin-left: 10px;
@@ -92,6 +93,7 @@ button#session-submit{
     padding: 10px;
     margin: 10px;
     background: rgb(252,91,99);
+    border: 1px solid rgb(252,91,99);
 }
 .session-submit:hover{
     cursor: pointer;
