@@ -39,8 +39,8 @@ class BookingForm extends React.Component{
 
     render(){
         // debugger
-        console.log(this.state.trip_start);
-        console.log(this.state.trip_end);
+        // console.log(this.state.trip_start);
+        // console.log(this.state.trip_end);
         return(
             <div className='booking-form-box'>
                 <div className='main-price-line'>
