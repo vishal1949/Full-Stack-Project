@@ -10,7 +10,7 @@ import HomeSplash from './homesplash';
 import {AuthRoute} from '../util/route_util';
 import ListingIndexContainer from './listing_components/listing_index_container';
 import ListingShowContainer from './listing_components/listing_show_contiainer';
-
+import BookingIndexContainer from './booking_components/bookings_index_container';
 
 
 const App = () => (
@@ -26,6 +26,7 @@ const App = () => (
             <AuthRoute exact path='/signup' component={HomeSplash}/>
             <Route exact path='/listings' component={ListingIndexContainer}/>
             <Route path='/listings/:listingId' component={ListingShowContainer} />
+            <Route path='/users/:userId/bookings' component={BookingIndexContainer} />
             <Route path='/' component={HomeSplash} />
         </Switch>
     </div>

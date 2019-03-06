@@ -11,7 +11,7 @@ class Api::BookingsController < ApplicationController
 
     def index 
         @bookings = Booking.includes(:listing).where(renter_id: current_user.id).order(:trip_start)
-        render json: @bookings
+        render 'api/bookings/index'
     end
 
 

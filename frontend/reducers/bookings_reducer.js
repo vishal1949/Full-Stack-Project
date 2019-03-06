@@ -1,14 +1,16 @@
-    import {RECEIVE_BOOKING} from '../actions/booking_actions';
+
+import {RECEIVE_BOOKING} from '../actions/booking_actions';
 import {RECEIVE_BOOKINGS} from '../actions/booking_actions';
 
 const bookingsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type){
         case RECEIVE_BOOKING:
-            debugger
-            return Object.assign({}, state, action.booking)
+        // let id = parseInt(Object.keys(action.booking)[0])
+        return Object.assign({}, state, {[parseInt(Object.keys(action.booking)[0])]: action.booking[parseInt(Object.keys(action.booking)[0])]})
         case RECEIVE_BOOKINGS:
-            return action.bookings;
+        // debugger
+            return action.bookings
         default:
             return state;
     }

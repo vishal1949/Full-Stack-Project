@@ -72,7 +72,7 @@
     font-size: 20px;
     font-weight: 300;
     color: rgb(118,118,118);
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     border: 1px solid lightgray;
     transition: transform .3s;
     position: relative;
@@ -91,6 +91,7 @@
     font-weight: 300;
     color: white;
     background-color: rgb(241,90,95);
+    margin-top: 20px;
     margin-bottom: 14px;
     border: 2px solid rgb(241,90,95);
 }
@@ -135,11 +136,12 @@
     z-index: 5;
     transition: transform .3s;
     position: absolute;
-    width: 308px;
-    height: 240px;
-    // padding: 0px 16px;
+    width: 274px;
+    height: 267px;
+    padding: 0px 16px;
     flex-direction: column;
     align-content: space-between;
+    // justify-content: space-between;
     background: white;
     border: 1px solid lightgray;
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
@@ -169,4 +171,48 @@
 
 .close-dropdown:hover{
     cursor: pointer;
+}
+
+.minus-circle, .add-circle{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    border: 2px solid rgb(50,132,137);
+    text-align: center;
+    // align-self: center;
+}
+.minus-circle:hover, .add-circle:hover{
+    cursor: pointer;
+}
+
+.adult-infant-count{
+    display: flex;
+    padding-top: 20px;
+    flex-direction: row;
+    padding-right: 10px;
+}
+
+.for-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.only-adult{
+    padding-top: 24px;
+}
+
+.the-count{
+    // border: 1px solid red;
+    text-align: center;
+    width: 30px;
+    margin: 10px;
+    margin-top: 5px;
+}
+
+.extra-padding{
+    margin-bottom: 16px;
+}
+
+.lighten{
+    color: rgb(198,225,226)
 }

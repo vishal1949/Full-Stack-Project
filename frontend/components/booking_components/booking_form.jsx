@@ -2,6 +2,7 @@ import React from 'react'
 import 'react-dates/initialize';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
+import { debug } from 'util';
 
 class BookingForm extends React.Component{
     constructor(props){
@@ -13,24 +14,27 @@ class BookingForm extends React.Component{
             trip_end: null,
             num_guests: 1,
         }
+        this.adult_count = 0;
+        this.infant_count = 0;
+        this.children_count = 0;
+
         // debugger
         this.handleSubmit = this.handleSubmit.bind(this);
         this.pluralCheck = this.pluralCheck.bind(this);
         this.guestHandler = this.guestHandler.bind(this);
+        this.closeHandler = this.closeHandler.bind(this);
         this.bookCheck = this.bookCheck.bind(this);
+        this.incrementCount = this.incrementCount.bind(this);
+        this.shadeHandler = this.shadeHandler.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        // debugger
         if(this.state.trip_end !== null && this.state.trip_start !== null){
-            debugger
-            this.state.trip_start = this.state.trip_start._d;
-            this.state.trip_end = this.state.trip_end._d;
-            const booking = Object.assign({}, this.state);
-            debugger
+            const booking = Object.assign({}, this.state, {trip_start: this.state.trip_start._d, 
+                trip_end: this.state.trip_end._d});
             this.props.createBooking(booking).then(() => {
-                debugger
-                this.props.history.push('/');
                 alert("Booking has been made!");
             });
         }
@@ -61,6 +65,65 @@ class BookingForm extends React.Component{
         }
     }
 
+    incrementCount(e, type){
+
+        e.preventDefault();
+        debugger
+        this.setState({[this.state.num_guests]: this.state.num_guests++})
+        if(type === 'adult'){
+            this.adult_count++;
+        }
+        if(type === 'child'){
+            this.children_count++;
+        }
+        if(type === 'infant'){
+            this.infant_count++;
+        }
+    }
+    decrementCount(e, type){
+
+        e.preventDefault();
+        debugger
+        if(this.state.num_guests > 1){
+            this.setState({[this.state.num_guests]: this.state.num_guests--})
+        }
+        if(type === 'adult'){
+            if(this.adult_count > 0){
+                this.adult_count--;
+            }
+        }
+        if(type === 'child'){
+            if (this.children_count > 0) {
+                this.children_count--;
+            }
+        }
+        if(type === 'infant'){
+            if (this.infant_count > 0) {
+                this.infant_count--;
+            }
+        }
+    }
+
+    shadeHandler(type){
+        // e.preventDefault();
+        debugger
+        if (type === 'adult'){
+            if(this.adult_count === 0){
+                document.getElementsByClassName('minus-circle')[0].classList.add('lighten')
+            }
+        }
+        if (type === 'child'){
+            if (this.adult_count === 0) {
+                document.getElementsByClassName('minus-circle')[1].classList.add('lighten')
+            }
+        }
+        if (type === 'infant'){
+            if (this.adult_count === 0) {
+                document.getElementsByClassName('minus-circle')[2].classList.add('lighten')
+            }
+        }
+    }
+
 
     guestHandler(e){
         e.preventDefault();
@@ -69,6 +132,11 @@ class BookingForm extends React.Component{
         // this.found = document.getElementsByClassName('find-with');
         // this.found.classList.add('dropdown-content');
         // this.found.classList.remove('find-with');
+    }
+
+    closeHandler(e){
+        e.preventDefault();
+        document.getElementsByClassName('dropdown-content')[0].classList.remove('dropdown-content')
     }
 
     render(){
@@ -113,15 +181,45 @@ class BookingForm extends React.Component{
                     />
                     <div className='dates'>Guests</div>
                     <div onClick={(event) => this.guestHandler(event)} className='guest-button'>{this.state.num_guests} {this.pluralCheck()}</div>
-                    <div className='find-with'>
-                        <div className='adults-children'>Adults</div>
-                        <div className='adults-children'>Children
-                            <div className='age-restricts'>Ages 2 - 12</div>
+                    <div>
+                        <div className='find-with'>
+                        <div className='for-flex extra-padding'>
+                            <div className='adults-children only-adult'>Adults</div>
+                            <div className='adult-infant-count'>
+                                    <div onClick={(e) => this.decrementCount(e, 'adult')} className='minus-circle'>-</div>
+                                <div className='the-count'>{this.adult_count}</div>
+                                <div  onClick={(e) => this.incrementCount(e, 'adult')} className='add-circle'>+</div>
+                            </div>
                         </div>
-                        <div className='adults-children'>Infants
-                            <div className='age-restricts'>Under 2</div>
+                        <div>
+                            <div className='for-flex'>
+                                <div>
+                                    <div className='adults-children'>Children
+                                        <div className='age-restricts'>Ages 2 - 12</div>
+                                    </div>
+                                </div>
+                                <div className='adult-infant-count'>
+                                        <div onClick={(e) => this.decrementCount(e, 'child')} className='minus-circle'>-</div>
+                                        <div className='the-count'>{this.children_count}</div>
+                                        <div onClick={(e) => this.incrementCount(e, 'child')} className='add-circle'>+</div>
+                                </div>
+                            </div>
+                            </div>
+                            <div>
+                                <div className='for-flex'>
+                                    <div className='adults-children'>Infants
+                                        <div className='age-restricts'>Under 2</div>
+                                    </div>
+                                <div className='adult-infant-count'>
+                                        <div onClick={(e) => this.decrementCount(e, 'infant')} className='minus-circle'>-</div>
+                                    <div className='the-count'>{this.infant_count}</div>
+                                    <div onClick={(e) => this.incrementCount(e, 'infant')} className='add-circle'>+</div>
+                                </div>
+                            </div>
+                            </div>
+                            <div onClick={event => this.closeHandler(event)}className='close-dropdown'>Close</div>
                         </div>
-                        <div className='close-dropdown'>Close</div>
+                        
                     </div>
                     <button type='submit' className='request-button'>Request to Book</button>
                     <div className='nocharge'>You won't be charged yet</div>

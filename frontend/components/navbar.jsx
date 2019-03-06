@@ -3,9 +3,12 @@ import {Link} from 'react-router-dom'
 
 
 
+
+
 class Navbar extends React.Component{
     constructor(props){
         super(props)
+        // debugger
         this.state = this.props.session;
         this.handleEvent = this.handleEvent.bind(this);
         this.logout = this.logout.bind(this);
