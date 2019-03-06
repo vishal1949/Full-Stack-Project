@@ -7,7 +7,7 @@ class ListingIndexItem extends React.Component{
         this.homeType = this.homeType.bind(this);
         this.house = this.props.listing.house;
         this.privateRoom = this.props.listing.private_room;
-        debugger
+        // debugger
 
     }
 // have access to listing info and listing id
