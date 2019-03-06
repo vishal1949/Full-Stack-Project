@@ -1,4 +1,16 @@
 #entire-bookings{
     display: flex;
     flex-wrap: wrap;
+    margin-left: 10px;
+}
+#entire-bookings:hover{
+    cursor: pointer;
+}
+
+.where-you-been{
+    padding-top: 30px;
+    padding-left: 30px;
+    font-size: 32px;
+    font-weight: 600;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
 }

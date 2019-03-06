@@ -7,13 +7,17 @@ class BookingIndexItem extends React.Component{
         this.date = this.props.booking.trip_start.toString();
         this.year = this.date.split('-')[0];
         this.month = parseInt(this.date.split('-')[1]);
-        // this.year = this.props.booking.trip_start.toString().split(' ')[0];
-        // this.month = this.props.booking.trip_start.toString().split(' ')[1];
-        // this.day = this.props.booking.trip_start.toString().split(' ')[2];
+        this.day = parseInt(this.date.split('-')[2])
 
+        this.endDate = this.props.booking.trip_end.toString();
+        this.endYear = this.endDate.split('-')[0];
+        this.endMonth = parseInt(this.endDate.split('-')[1]);
+        this.endDay = parseInt(this.endDate.split('-')[2])
+
+        
         this.monthConvert = this.monthConvert.bind(this);
         this.dayConverter = this.dayConverter.bind(this);
-        
+        // debugger
     }
 
     monthConvert(num){
@@ -60,15 +64,22 @@ class BookingIndexItem extends React.Component{
         return( week[num] );
     }
 
+
     render(){
         // debugger
         return(
             <div className='to-make-work'>
                 <img className='booking-pic' src="https://cdn.pixabay.com/photo/2016/06/24/10/47/architecture-1477041__340.jpg" alt=""/>
-                <div>{this.monthConvert(this.month)} {this.year}</div>
-                <div>{this.props.city}</div>
-                <div>From: {this.props.booking.trip_start}</div>
-                <div>To: {this.props.booking.trip_end}</div>
+                <div className='month-year'>{this.monthConvert(this.month)} {this.year}</div>
+                <div className='city-something'>{this.props.city}</div>
+                <div className='from-trip'>
+                    <div className='from-to'>From: </div> 
+                    <div className='from-to-dates'>{this.monthConvert(this.month)} {(this.day)}</div>
+                </div>
+                <div className='from-trip'>
+                    <div className='from-to'>To: </div> 
+                    <div className='from-to-dates'> {this.monthConvert(this.endMonth)} {(this.endDay)}</div>
+                </div>
             </div>
         )
     }

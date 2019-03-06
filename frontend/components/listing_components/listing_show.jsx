@@ -98,16 +98,15 @@ class ListingShow extends React.Component{
         return(
             <div>
                 <div className='entire-imgs'>
-                
-                    <img className='first-pic' src='' alt=""/>
+                    <div className='first-img-stuff'><img className='first-pic' src='https://cdn.pixabay.com/photo/2018/01/24/15/08/live-3104077__340.jpg' alt="" /></div>
                     <div>
                         <div className='four-pics'>
-                            <img className='second-pic' src="https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756__340.jpg" alt=""/>
-                            <img className='third-pic' src="https://cdn.pixabay.com/photo/2014/08/11/21/40/wall-416062__340.jpg" alt=""/>
+                            <div className='second-pic'><img className='second-pic-img' src="https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756__340.jpg" alt="" /></div>
+                            <div className='second-pic'><img className='second-pic-img' src="https://cdn.pixabay.com/photo/2014/08/11/21/40/wall-416062__340.jpg" alt=""/></div>
                         </div>    
                         <div className='four-pics'>
                             <div className='second-pic'><img className='second-pic-img' src="https://cdn.pixabay.com/photo/2018/01/24/15/08/live-3104077__340.jpg" alt="" /></div>
-                            <img className='third-pic' src="https://cdn.pixabay.com/photo/2016/04/18/08/51/bathroom-1336164__340.jpg" alt=""/>
+                            <div className='second-pic'><img className='second-pic-img' src="https://cdn.pixabay.com/photo/2016/04/18/08/51/bathroom-1336164__340.jpg" alt=""/></div>
                         </div>
                     </div>    
                 </div>
