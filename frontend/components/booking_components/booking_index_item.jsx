@@ -66,7 +66,7 @@ class BookingIndexItem extends React.Component{
             <div className='to-make-work'>
                 <img className='booking-pic' src="https://cdn.pixabay.com/photo/2016/06/24/10/47/architecture-1477041__340.jpg" alt=""/>
                 <div>{this.monthConvert(this.month)} {this.year}</div>
-                <div>{this.props.booking.city}</div>
+                <div>{this.props.city}</div>
                 <div>From: {this.props.booking.trip_start}</div>
                 <div>To: {this.props.booking.trip_end}</div>
             </div>

@@ -4,6 +4,7 @@ import BookingForm from './booking_form'
 
 const mapStateToProps = (state, ownProps) => {
     let renterId = state.session.id; //gives me access to current user id
+    // debugger
     let bookings = Object.values(state.entities.bookings)
     return ({
         renterId,

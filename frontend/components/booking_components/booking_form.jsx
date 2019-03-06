@@ -143,10 +143,10 @@ class BookingForm extends React.Component{
         // debugger
         if( this.state.trip_end !== null && this.state.trip_start !== null){
             // debugger
-            // this.state.trip_start = this.state.trip_start.format();
-            // this.state.trip_end = this.state.trip_end.format();
-            // console.log(this.state.trip_end.format());
-            // console.log(this.state.trip_start);
+            this.state.trip_start = this.state.trip_start;
+            this.state.trip_end = this.state.trip_end;
+            console.log(this.state.trip_end.format());
+            console.log(this.state.trip_start.format());
         }
         // debugger
         // if (bookings.length < 1) return null;

@@ -12,6 +12,7 @@ class ListingIndex extends React.Component{
     componentDidMount(){
         // debugger
         this.props.fetchListings();
+        // debugger
     }
 
     render(){

@@ -69,12 +69,12 @@ class Navbar extends React.Component{
                             <a href='' className='nav-link'><p className='nav-tabs'>Add Listing</p></a>
                             <a href='' className='nav-link'><p className='nav-tabs'>Host</p></a>
                             <a href='' className='nav-link'>
-                                <p className='nav-tabs'>Something 2</p>
+                                <p className='nav-tabs'>Help</p>
                             </a>
-                            <a href='' className='nav-link'>
-                                <p className='nav-tabs'>Something </p>
+                            <a href='/' className='nav-link'>
+                                <p className='nav-tabs'>Trips</p>
                             </a>
-                            <a href='' className='nav-link ' onClick={this.logout}><p className='nav-tabs'>logout</p></a> 
+                            <a href='' className='nav-link ' onClick={this.logout}><p className='nav-tabs'>Logout</p></a> 
                             <div href='' className='for-user'><img className='user circular-square' src='https://www.kwsme.com/wp-content/uploads/2016/06/login-user-icon.png'></img></div>
                         </div>
                     </header>

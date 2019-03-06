@@ -1,5 +1,15 @@
 .entire-booking-index{
     display: flex;
+    flex-direction: row;
     border: 1px solid black;
 
+}
+
+#entire-bookings{
+    display: flex !important;
+    border: 2px solid red;
+}
+
+.to-make-work{
+    border: 2px solid blue;
 }
