@@ -29,7 +29,7 @@ class ListingIndexItem extends React.Component{
     render(){
         return(
             <Link to={`listings/${this.props.listing.id}`} className="listing-index-item">
-                <img src='https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'></img>
+                <img src={this.props.listing.photoUrl}></img>
                 <div className='bed-and-room-info'>
                     {this.homeType()}
                     <span className="dot"> </span>

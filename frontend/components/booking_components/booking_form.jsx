@@ -90,16 +90,22 @@ class BookingForm extends React.Component{
         if(type === 'adult'){
             if(this.adult_count > 0){
                 this.adult_count--;
+            }else{
+                this.setState({ [this.state.num_guests]: this.state.num_guests++ })
             }
         }
         if(type === 'child'){
             if (this.children_count > 0) {
                 this.children_count--;
+            } else{
+                this.setState({ [this.state.num_guests]: this.state.num_guests++ })
             }
         }
         if(type === 'infant'){
             if (this.infant_count > 0) {
                 this.infant_count--;
+            } else{
+                this.setState({[this.state.num_guests]: this.state.num_guests++})
             }
         }
     }
