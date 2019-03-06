@@ -7,6 +7,7 @@ class ListingIndexItem extends React.Component{
         this.homeType = this.homeType.bind(this);
         this.house = this.props.listing.house;
         this.privateRoom = this.props.listing.private_room;
+        debugger
 
     }
 // have access to listing info and listing id
@@ -29,7 +30,7 @@ class ListingIndexItem extends React.Component{
     render(){
         return(
             <Link to={`listings/${this.props.listing.id}`} className="listing-index-item">
-                <img src={this.props.listing.photoUrl}></img>
+                <img src={this.props.listing.photo[0].picUrl}></img>
                 <div className='bed-and-room-info'>
                     {this.homeType()}
                     <span className="dot"> </span>
