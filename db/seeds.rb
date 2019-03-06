@@ -53,9 +53,20 @@ spot_seven = Listing.create({owner_id: user_one[:id], title: "Beautiful place to
     city: "SF", state: "California", zip: 94117, num_rooms: 6, num_bathrooms: 2, available: true, 
     price: 120, description: "its just amazing but no view", private_room: false, house: true, washer: false, dryer: false, 
     parking_spot: true, tv: true, wifi: true, ac: false, kitchen: true})
-spot_seven = Listing.create({owner_id: user_four[:id], title: "Cheap and affordable", address: "21 florence st", 
+spot_eight = Listing.create({owner_id: user_four[:id], title: "Cheap and affordable", address: "21 florence st", 
     city: "SF", state: "California", zip: 94312, num_rooms: 1, num_bathrooms: 1, available: true, 
     price: 60, description: "The roof is flat and is covered with wheat straw. One small chimney sits at the side of the house. A few large windows let in just enough light to the rooms below the roof.
         The house itself is surrounded by a gorgeous garden, including hanging grape vines, a pagoda, a pond and many different flowers.",  
     private_room: true, house: false, washer: false, dryer: false, 
     parking_spot: true, tv: true, wifi: true, ac: false, kitchen: true})
+
+
+# Photos
+
+Listing.all.each_with_index do |listing, i|
+    listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/bedrooms/bedroom#{i+1}.jpg"), filename: "bedroom#{i+1}.jpg")
+    listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/houses/house#{i+1}.jpg"), filename: "house#{i+1}.jpg")
+    listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/kitchens/kitchen#{i+1}.jpg"), filename: "kitchen#{i+1}.jpg")
+    listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/bathrooms/bathroom#{i+1}.jpg"), filename: "bathroom#{i+1}.jpg")
+    listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/lofts/loft#{i+1}.jpg"), filename: "loft#{i+1}.jpg")
+end

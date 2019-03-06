@@ -68,7 +68,7 @@ class BookingForm extends React.Component{
     incrementCount(e, type){
 
         e.preventDefault();
-        debugger
+        // debugger
         this.setState({[this.state.num_guests]: this.state.num_guests++})
         if(type === 'adult'){
             this.adult_count++;
@@ -83,7 +83,7 @@ class BookingForm extends React.Component{
     decrementCount(e, type){
 
         e.preventDefault();
-        debugger
+        // debugger
         if(this.state.num_guests > 1){
             this.setState({[this.state.num_guests]: this.state.num_guests--})
         }

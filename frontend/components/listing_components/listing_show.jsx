@@ -5,6 +5,8 @@ class Amenity extends React.Component{
     constructor(props){
         super(props)
         this.iconCheck = this.iconCheck.bind(this);
+        this.state = {}
+        // debugger
     }
     iconCheck(){
         if(this.props.amenity === 'Kitchen'){
@@ -34,12 +36,14 @@ class Amenity extends React.Component{
     }
 }
 
+// -----------------------------------------------------------------------
 
 class ListingShow extends React.Component{
     constructor(props){
         super(props);
         this.homeType = this.homeType.bind(this);
         this.amenityCheck = this.amenityCheck.bind(this);
+        // debugger
     }
     
     componentDidMount() {
@@ -93,20 +97,24 @@ class ListingShow extends React.Component{
         if (!this.props.listing) {
             return null;
         }
+        if (!this.props.listing.photo){
+            this.state = {};
+            return null;
+        }
         // debugger
         let elements = this.amenityCheck().map( amenity => <Amenity key={amenity} amenity={amenity}/>)
         return(
             <div>
                 <div className='entire-imgs'>
-                    <div className='first-img-stuff'><img className='first-pic' src='https://cdn.pixabay.com/photo/2018/01/24/15/08/live-3104077__340.jpg' alt="" /></div>
+                    <div className='first-img-stuff'><img className='first-pic' src={this.props.listing.photo[0].picUrl} alt="" /></div>
                     <div>
                         <div className='four-pics'>
-                            <div className='second-pic'><img className='second-pic-img' src="https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756__340.jpg" alt="" /></div>
-                            <div className='second-pic'><img className='second-pic-img' src="https://cdn.pixabay.com/photo/2014/08/11/21/40/wall-416062__340.jpg" alt=""/></div>
+                            <div className='second-pic'><img className='second-pic-img' src={this.props.listing.photo[1].picUrl} alt="" /></div>
+                            <div className='second-pic'><img className='second-pic-img' src={this.props.listing.photo[2].picUrl} alt=""/></div>
                         </div>    
                         <div className='four-pics'>
-                            <div className='second-pic'><img className='second-pic-img' src="https://cdn.pixabay.com/photo/2018/01/24/15/08/live-3104077__340.jpg" alt="" /></div>
-                            <div className='second-pic'><img className='second-pic-img' src="https://cdn.pixabay.com/photo/2016/04/18/08/51/bathroom-1336164__340.jpg" alt=""/></div>
+                            <div className='second-pic'><img className='second-pic-img' src={this.props.listing.photo[3].picUrl} alt="" /></div>
+                            <div className='second-pic'><img className='second-pic-img' src={this.props.listing.photo[4].picUrl} alt=""/></div>
                         </div>
                     </div>    
                 </div>
