@@ -63,6 +63,9 @@ class Navbar extends React.Component{
                 <header className='main-header'>
                     <div className='main-div'>
                         <Link to='/' ><img className='img' src={window.images.stayBnbLogo} alt="" /></Link>
+                        <div className='search-bar'>
+                            <SearchContainer history={this.props.history}/>
+                        </div>
                     </div>
                     <div className='main-div'>
                         <header className="main-navbar">

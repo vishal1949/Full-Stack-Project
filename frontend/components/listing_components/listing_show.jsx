@@ -1,6 +1,8 @@
 import React from 'react'
 import BookingFormContainer from '../booking_components/booking_form_container'
 import ListingMap from '../listing_map'
+import ReviewFormContainer from '../reviews/review_form_container'
+import ListingDetail from '../reviews/listing_detail'
 
 class Amenity extends React.Component{
     constructor(props){
@@ -170,7 +172,9 @@ class ListingShow extends React.Component{
                         {elements}
                     </ul>
                     <div className='gray-line'></div>
-                    <div className='amenities'>Availability</div>
+                    {/* <div className='amenities'>Availability</div> */}
+                    {/* <ListingDetail listing={this.props.listing}  /> */}
+                    <ReviewFormContainer />
                     <div id='show-map'>
                         <ListingMap />
                     </div>

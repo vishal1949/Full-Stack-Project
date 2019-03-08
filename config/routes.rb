@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     resources :listings, only: [:create, :show, :index] do 
       resources :bookings, only: [:create]
       resources :photos, only: [:create]
-      resources :reviews, only: [:create, :update]
     end
+    resources :reviews, only: [:create]
     resources :bookings, only: [:update, :index]
 
   end

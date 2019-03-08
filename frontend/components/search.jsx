@@ -1,4 +1,6 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import ListingMap from './listing_map';
 import ListingIndex from './listing_components/listing_index';
 import ListingIndexContainer from './listing_components/listing_index_container';
@@ -23,7 +25,9 @@ class Search extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
+        debugger
         this.props.newSearch(this.state.searchField);
+        this.props.history.push('/listings');
     }
     update(field) {
         return e => this.setState({

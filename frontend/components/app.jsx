@@ -19,7 +19,8 @@ const App = () => (
     <div>
         <Modal/>
         <header>
-            <NavbarContainer/>
+            <Route path='/' component={NavbarContainer}>
+            </Route>
         </header>
         {/* <Route exact path='/' component={HomeSplash} /> */}
         <Switch > 

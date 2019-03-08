@@ -3,6 +3,9 @@ import ExploreTab from './explore_tab';
 
 
 class HomeSplash extends Component {
+    constructor(props){
+        super(props)
+    }
     render(){
         return(
 
