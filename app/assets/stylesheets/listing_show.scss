@@ -140,6 +140,9 @@
     overflow: hidden;
 }
 
+
+
+
 .first-pic{
     display: inline-block; 
     width: inherit;
@@ -150,6 +153,10 @@
     box-sizing: border-box;
     z-index: 1;
 }
+.first-pic:hover, #overlay{
+    opacity: .5;
+    // display: inline-block;
+}
 
 .four-pics{
     display: flex;
@@ -158,6 +165,8 @@
     
     
 }
+
+
 
 .second-pic, .third-pic{
     display: inline-block; 

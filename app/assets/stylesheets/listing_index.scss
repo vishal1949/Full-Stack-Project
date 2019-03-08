@@ -1,6 +1,7 @@
 .contains-listing-index-item {
     display: flex;
     flex-wrap: wrap;
+    // width: 1000px;
     // border: 2px solid black;
     margin-left: 80px;
     margin-right: 80px;
@@ -9,4 +10,10 @@
 
 h2.where-to-stay{
     margin-left: 88px;
+}
+
+
+.includes-map{
+    display: flex;
+    flex-direction: row;
 }

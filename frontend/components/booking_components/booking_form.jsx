@@ -35,13 +35,16 @@ class BookingForm extends React.Component{
             const booking = Object.assign({}, this.state, {trip_start: this.state.trip_start._d, 
                 trip_end: this.state.trip_end._d});
             this.props.createBooking(booking).then(() => {
-                alert("Booking has been made!");
-            });
-        }
+                alert("Booking has been made!")
+            })
+            
+            
+        
     }
+}
 
     bookCheck(){
-        debugger
+        // debugger
         this.bookings = this.props.fetchBookings();
         console.log(this.bookings);
     }
@@ -65,6 +68,24 @@ class BookingForm extends React.Component{
         }
     }
 
+    renderErrors() {
+        // return null;
+        
+        // debugger
+        return (<div>{this.props.error}</div>)
+        // if (this.props.errors.length !== 0 ) {
+        //     return (
+        //         <ul id="errors">
+        //             {this.props.errors.map((error, i) => (
+        //                 <li key={`error-${i}`}>
+        //                     {error}
+        //                 </li>
+        //             ))}
+        //         </ul>
+        //     );
+        // }
+    }
+
     incrementCount(e, type){
 
         e.preventDefault();
@@ -80,6 +101,8 @@ class BookingForm extends React.Component{
             this.infant_count++;
         }
     }
+
+
     decrementCount(e, type){
 
         e.preventDefault();
@@ -110,9 +133,24 @@ class BookingForm extends React.Component{
         }
     }
 
+    // renderErrors() {
+    //     // return null;
+    //     if (this.props.errors.length !== 0) {
+    //         return (
+    //             <ul id="errors">
+    //                 {this.props.errors.map((error, i) => (
+    //                     <li key={`error-${i}`}>
+    //                         {error}
+    //                     </li>
+    //                 ))}
+    //             </ul>
+    //         );
+    //     }
+    // }
+
     shadeHandler(type){
         // e.preventDefault();
-        debugger
+        // debugger
         if (type === 'adult'){
             if(this.adult_count === 0){
                 document.getElementsByClassName('minus-circle')[0].classList.add('lighten')
@@ -129,7 +167,9 @@ class BookingForm extends React.Component{
             }
         }
     }
-
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
 
     guestHandler(e){
         e.preventDefault();
@@ -227,6 +267,7 @@ class BookingForm extends React.Component{
                         </div>
                         
                     </div>
+                    {this.renderErrors()}
                     <button type='submit' className='request-button'>Request to Book</button>
                     <div className='nocharge'>You won't be charged yet</div>
                     <div className='other-gray-line'></div>

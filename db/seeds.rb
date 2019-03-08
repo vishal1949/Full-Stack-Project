@@ -61,6 +61,9 @@ spot_eight = Listing.create({owner_id: user_four[:id], title: "Cheap and afforda
     parking_spot: true, tv: true, wifi: true, ac: false, kitchen: true})
 
 
+
+    
+
 # Photos
 
 Listing.all.each_with_index do |listing, i|

@@ -1,3 +1,4 @@
+
 # == Schema Information
 #
 # Table name: bookings
@@ -14,6 +15,8 @@
 
 class Booking < ApplicationRecord
     validates :listing_id, :renter_id, :trip_end, :trip_start, :num_guests, presence: true
+    validate :overlap_prevention
+
     belongs_to :renter,
         primary_key: :id,
         foreign_key: :renter_id,
@@ -24,6 +27,18 @@ class Booking < ApplicationRecord
         foreign_key: :listing_id,
         class_name: 'Listing'
 
+
+    def booking_check
+        Booking.where.not(id: self.id).where(listing_id: self.listing_id)
+            .where.not('trip_start >= :trip_end OR trip_end <= :trip_start',
+                trip_start: trip_start, trip_end: trip_end)
+    end
+
+    def overlap_prevention
+        unless booking_check.empty?
+            errors[:base] << 'This listing is booked during that time frame!'
+    end
+  end
     
 
 end

@@ -1,5 +1,6 @@
 import React from 'react'
 import BookingFormContainer from '../booking_components/booking_form_container'
+import ListingMap from '../listing_map'
 
 class Amenity extends React.Component{
     constructor(props){
@@ -158,10 +159,13 @@ class ListingShow extends React.Component{
                     </ul>
                     <div className='gray-line'></div>
                     <div className='amenities'>Availability</div>
+                    <div id='show-map'>
+                        <ListingMap />
+                    </div>
                 </div>
                 <BookingFormContainer price={this.props.listing.price} listingId={this.props.listingId} history={this.props.history}/>
-
             </div>
+                
             </div>
         )
     }

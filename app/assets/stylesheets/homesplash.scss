@@ -7,3 +7,34 @@ div#background-splash{
     margin-left: 80px;
     margin-right: 20px;
 }
+
+
+.introduce-splash{
+    width: 1740px;
+    height: 300px;
+}
+
+.recommend-img{
+    height: 450px;
+    width: 330px;
+    padding-right: 23px;
+    margin-bottom: 100px;
+}
+
+.recommend-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.recomended-for-you{
+    margin-top: 40px;
+    margin-bottom: 14px;
+    padding-bottom: 0px;
+    
+}
+
+.new-selection{
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    margin-bottom: 20px;
+    font-weight: 300;
+}

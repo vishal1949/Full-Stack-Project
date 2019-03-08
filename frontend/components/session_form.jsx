@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom'
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+    // debugger
     this.state = {
       email: "",
       password: "",
@@ -34,7 +35,7 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     // return null;
-    if (this.props.errors.length !== 0){
+    if (this.props.errors.length > 0){
       return (
         <ul id="errors">
           {this.props.errors.map((error, i) => (

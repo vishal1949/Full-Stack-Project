@@ -31,6 +31,9 @@ class Listing < ApplicationRecord
     
     validates :address, uniqueness: true
     validates :owner_id, :title, :city, :state, :zip, presence: true
+    validate :full_address
+    after_validation :geocode 
+
     # validates :num_rooms, :num_bathrooms, :price,
     #     :description, :private_room, :house, :washer, :dryer, 
     #     :parking_spot, :tv, :wifi, :ac, :kitchen, :available
@@ -40,12 +43,29 @@ class Listing < ApplicationRecord
         foreign_key: :owner_id,
         class_name: 'User'
 
-    
+    geocoded_by :full_address
+
+
     has_many :bookings,
         primary_key: :id,
         foreign_key: :listing_id,
         class_name: 'Booking'
 
     has_many_attached :photo
+
+    def full_address
+        # debugger
+        self.full_address = Booking.address + " " + Booking.city + " " + Booking.zip
+        return self.full_address 
+    end
+
+
+    def self.in_bounds(bounds)
+
+        self.where("lat < ?", bounds[:northEast][:lat])
+            .where("lat > ?", bounds[:southWest][:lat])
+            .where("lng > ?", bounds[:southWest][:lng])
+            .where("lng < ?", bounds[:northEast][:lng])
+    end
 
 end

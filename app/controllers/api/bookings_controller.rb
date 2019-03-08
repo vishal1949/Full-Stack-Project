@@ -2,10 +2,10 @@ class Api::BookingsController < ApplicationController
     def create
         @booking = Booking.new(booking_params)
         @booking.renter_id = current_user.id 
-        if @booking.save!
+        if @booking.save
             render 'api/bookings/show'
         else
-            render json: @booking.errors.full_messages, status: 422
+            render json: ["Booking in that time frame already exists!"], status: 401
         end
     end
 

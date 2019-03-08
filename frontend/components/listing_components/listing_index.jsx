@@ -1,11 +1,13 @@
 import React from 'react';
 
 import ListingIndexItem from './listing_index_item'
+import ListingMap from '../listing_map';
 
 class ListingIndex extends React.Component{
     constructor(props){
         // debugger
         super(props)
+        this.listing_array = [];
     }
 
 
@@ -17,18 +19,27 @@ class ListingIndex extends React.Component{
 
     render(){
         // debugger
-        let listings_array = Object.values(this.props.listings)
+        
+        // if(!this.props.listings) return <div>EMPTY</div>
+        if (this.props.listings === undefined) {
+            this.listings_array = Object.values(this.props.notlistings)
+        } else { 
+            this.listings_array = Object.values(this.props.listings)
+        }
         return(
             //each div contains a ListingIndexItem
-            <div>
+            <div >
                 <h2 className='where-to-stay'>Where to stay</h2>
-                <div className='contains-listing-index-item'>
-                    {listings_array.map(listing => (
-                        <ListingIndexItem 
+                <div className='includes-map'>
+                    <div className='contains-listing-index-item'>
+                        {this.listings_array.map(listing => (
+                            <ListingIndexItem 
                             listing={listing}
                             key={listing.id}
-                        />
-                    ))}
+                            />
+                            ))}
+                    </div> 
+                {/* <ListingMap listings={this.props.listings}/> */}
                 </div>
             </div>
         )

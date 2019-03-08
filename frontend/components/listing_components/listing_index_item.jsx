@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
+
 class ListingIndexItem extends React.Component{
     constructor(props){
         super(props)
@@ -45,6 +46,7 @@ class ListingIndexItem extends React.Component{
                     <span className="fa fa-star checked"></span>
                     <span className="fa fa-star"></span>
                 </div>
+                
             </Link>
         )
     }
