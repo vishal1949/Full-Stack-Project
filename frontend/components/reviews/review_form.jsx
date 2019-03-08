@@ -7,7 +7,7 @@ class ReviewForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            rating: 5,
+            star_review: 5,
             body: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,8 +23,11 @@ class ReviewForm extends React.Component {
         e.preventDefault();
         const listingId = parseInt(this.props.match.params.listingId);
         const review = Object.assign({}, this.state, {
-            listing_id: listingId
+            listing_id: listingId,
+            user_id: this.props.currentUserId
+
         });
+        debugger
         this.props.createReview(review);
         this.navigateToListingShow();
     }
@@ -40,11 +43,11 @@ class ReviewForm extends React.Component {
                 <h3 className='ratings'>Rating</h3>
                 <div className='rating-and-start'>
                     <fieldset className="rating" >
-                        <input type="radio" id="star5" name="rating" onChange={this.update("rating")} value="5" /><label className="full" htmlFor="star5"></label>
-                        <input type="radio" id="star4" name="rating" onChange={this.update("rating")} value="4" /><label className="full" htmlFor="star4"></label>
-                        <input type="radio" id="star3" name="rating" onChange={this.update("rating")} value="3" /><label className="full" htmlFor="star3"></label>
-                        <input type="radio" id="star2" name="rating" onChange={this.update("rating")} value="2" /><label className="full" htmlFor="star2"></label>
-                        <input type="radio" id="star1" name="rating" onChange={this.update("rating")} value="1" /><label className="full" htmlFor="star1"></label>
+                        <input type="radio" id="star5" name="star_review" onChange={this.update("star_review")} value="5" /><label className="full" htmlFor="star5"></label>
+                        <input type="radio" id="star4" name="star_review" onChange={this.update("star_review")} value="4" /><label className="full" htmlFor="star4"></label>
+                        <input type="radio" id="star3" name="star_review" onChange={this.update("star_review")} value="3" /><label className="full" htmlFor="star3"></label>
+                        <input type="radio" id="star2" name="star_review" onChange={this.update("star_review")} value="2" /><label className="full" htmlFor="star2"></label>
+                        <input type="radio" id="star1" name="star_review" onChange={this.update("star_review")} value="1" /><label className="full" htmlFor="star1"></label>
                     </fieldset>
                 </div>    
                     {/* <input type="number" value={this.state.rating} onChange={this.update("rating")}/> */}

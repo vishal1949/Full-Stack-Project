@@ -2,7 +2,7 @@ import React from 'react'
 import BookingFormContainer from '../booking_components/booking_form_container'
 import ListingMap from '../listing_map'
 import ReviewFormContainer from '../reviews/review_form_container'
-import ListingDetail from '../reviews/listing_detail'
+import ReviewIndexContainer from '../reviews/review_index_container'
 
 class Amenity extends React.Component{
     constructor(props){
@@ -46,7 +46,9 @@ class ListingShow extends React.Component{
         super(props);
         this.homeType = this.homeType.bind(this);
         this.amenityCheck = this.amenityCheck.bind(this);
-        // debugger
+        this.state = {
+            empty: ''
+        }
     }
     
     componentDidMount() {
@@ -180,6 +182,7 @@ class ListingShow extends React.Component{
                     {/* <div className='amenities'>Availability</div> */}
                     {/* <ListingDetail listing={this.props.listing}  /> */}
                     <ReviewFormContainer />
+                    <ReviewIndexContainer listingId={this.props.listing.id}/>
                     <div id='show-map'>
                         <ListingMap />
                     </div>

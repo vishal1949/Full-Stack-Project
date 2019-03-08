@@ -1,6 +1,8 @@
 export const RECEIVE_LISTING = 'RECEIVE_LISTING';
 export const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
+
 import * as ListingApiUtil from '../util/listing_api_util'
 
 const receiveListing = (listing) => {
@@ -17,11 +19,16 @@ const receiveListings = (listings) => {
     })
 }
 
-export const receiveReview = ({ review, average_rating, user }) => ({
+export const receiveReviews = (reviews) => ({
+    type: RECEIVE_REVIEWS,
+    reviews
+})
+
+export const receiveReview = (review) => ({
     type: RECEIVE_REVIEW,
     review,
-    average_rating,
-    user,
+    // average_rating,
+    // user,
 });
 
 export const createReview = review => dispatch => (
@@ -46,4 +53,11 @@ export const fetchListings = () => dispatch => {
         .then(listings => 
             dispatch(receiveListings(listings)
             )))
+}
+
+export const fetchReviews = (id) => dispatch => {
+    return(
+        ListingApiUtil.fetchReviews(id)
+            .then(reviews => dispatch(receiveReviews(reviews)))
+    )
 }

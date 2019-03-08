@@ -14,9 +14,10 @@ const Review = ({ review, author }) => {
     );
 };
 
-const mapStateToProps = ({ entities: { users } }, { review }) => {
+const mapStateToProps = ({ entities: { users, reviews }  }) => {
+    debugger
     return {
-        author: users[review.user_id]
+        author: users[reviews.user_id]
     };
 };
 

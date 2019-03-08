@@ -1,6 +1,7 @@
 import {
     RECEIVE_LISTING,
     RECEIVE_REVIEW,
+    RECEIVE_REVIEWS
 } from '../actions/listing_actions'
 
 const reviewsReducer = (state = {}, action) => {
@@ -11,6 +12,8 @@ const reviewsReducer = (state = {}, action) => {
         case RECEIVE_REVIEW:
             const { review } = action;
             return Object.assign({}, state, { [review.id]: review });
+        case RECEIVE_REVIEWS:
+            return action.reviews
         default:
             return state;
     }
