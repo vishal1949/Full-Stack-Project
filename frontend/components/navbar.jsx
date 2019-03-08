@@ -20,6 +20,7 @@ class Navbar extends React.Component{
         this.handleEvent = this.handleEvent.bind(this);
         this.logout = this.logout.bind(this);
         this.handleDates = this.handleDates.bind(this);
+        debugger
     }
 
     handleEvent(e){
@@ -64,7 +65,7 @@ class Navbar extends React.Component{
                     <div className='main-div'>
                         <Link to='/' ><img className='img' src={window.images.stayBnbLogo} alt="" /></Link>
                         <div className='search-bar'>
-                            <SearchContainer history={this.props.history}/>
+                            <SearchContainer />
                         </div>
                     </div>
                     <div className='main-div'>

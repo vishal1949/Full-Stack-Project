@@ -1,5 +1,6 @@
 import {connect} from 'react-redux'
 import Search from './search';
+import {withRouter} from 'react-router-dom'
 import { fetchListings } from '../actions/listing_actions'
 import {newSearch} from '../actions/search_actions'
 
@@ -17,4 +18,4 @@ const mapDispatchToProps = dispatch => {
     })
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search))
