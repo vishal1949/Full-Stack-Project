@@ -3,3 +3,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.usercircle-name{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.doing-flex{
+    display: flex;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.user-fname{
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.review-main-body{
+    width: inherit;
+    margin-top: 10px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+    color: rgb(72,72,72);
+    font-size: 12px;
+}
+
+.review-user{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbsHb97Kk4RvH6dnxAi5aAqIJ0YjAZiirKrV2qFkbXOKj2m-Um");
+    background-size: cover;
+    background-position: center;
+}
+
+.check-review{
+    margin-top: 20px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+
+}
+
+.hard-coded-stars{
+    margin-left: 10px;
+}

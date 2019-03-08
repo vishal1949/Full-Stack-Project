@@ -27,8 +27,9 @@ class ReviewForm extends React.Component {
             user_id: this.props.currentUserId
 
         });
-        debugger
+        // debugger
         this.props.createReview(review);
+        this.setState({body: ' '})
         this.navigateToListingShow();
     }
 
