@@ -42,7 +42,7 @@ class Listing < ApplicationRecord
         foreign_key: :owner_id,
         class_name: 'User'
 
-    geocoded_by :full_address
+    has_many :reviews
 
 
     has_many :bookings,

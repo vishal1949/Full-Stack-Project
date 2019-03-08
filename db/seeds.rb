@@ -23,6 +23,9 @@ spot_one = Listing.create!({ owner_id: user_one[:id], title: "Beautiful apartmen
     price: 100, description: "From the outside this house looks very elegant. It has been built with tan bricks and has yellow pine wooden decorations. Large, triangular windows allow enough light to enter the home and have been added to the house in a mostly asymmetric way.", 
     private_room: true, house: false, washer: false, dryer: false, 
     parking_spot: false, tv: true, wifi: true, ac: false, kitchen: true})
+
+
+
 spot_two = Listing.create({owner_id: user_two[:id], title: "Beautiful apartment with beautiful view", address: "80 Chumasero Dr", 
     city: "San Francisco", state: "California", zip: 94312, num_rooms: 2, num_bathrooms: 2, available: true, 
     price: 150, description: "The house is equipped with a modern kitchen and two modern bathrooms, it also has a comfortable living room, four bedrooms, a small dining area, a lounge area and a cozy garage.", 
@@ -91,10 +94,109 @@ spot_thirteen = Listing.create({owner_id: user_five[:id], title: "Come visit Gar
 
 # Photos
 
-Listing.all.each_with_index do |listing, i|
-    listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/bedrooms/bedroom#{i+1}.jpg"), filename: "bedroom#{i+1}.jpg")
-    listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/houses/house#{i+1}.jpg"), filename: "house#{i+1}.jpg")
-    listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/kitchens/kitchen#{i+1}.jpg"), filename: "kitchen#{i+1}.jpg")
-    listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/bathrooms/bathroom#{i+1}.jpg"), filename: "bathroom#{i+1}.jpg")
-    listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/lofts/loft#{i+1}.jpg"), filename: "loft#{i+1}.jpg")
-end
+# Listing.all.each_with_index do |listing, i|
+#     listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/bedrooms/bedroom#{i+1}.jpg"), filename: "bedroom#{i+1}.jpg")
+#     listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/houses/house#{i+1}.jpg"), filename: "house#{i+1}.jpg")
+#     listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/kitchens/kitchen#{i+1}.jpg"), filename: "kitchen#{i+1}.jpg")
+#     listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/bathrooms/bathroom#{i+1}.jpg"), filename: "bathroom#{i+1}.jpg")
+#     listing.photo.attach(io: File.open("/Users/vishalsandhu/Desktop/full-stack-img/lofts/loft#{i+1}.jpg"), filename: "loft#{i+1}.jpg")
+# end
+
+# photos
+
+spot_thirteen.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom13.jpg'), filename:'bathroom13.jpg',)
+spot_thirteen.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft13.jpg'), filename:'loft13.jpg',)
+spot_thirteen.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen13.jpg'), filename:'kitchen13.jpg',)
+spot_thirteen.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house13.jpg'), filename:'house13.jpg',)
+spot_thirteen.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom13.jpg'), filename:'bedroom13.jpg',)
+
+
+spot_twelve.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom12.jpg'), filename:'bathroom12.jpg',)
+spot_twelve.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft12.jpg'), filename:'loft12.jpg',)
+spot_twelve.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen12.jpg'), filename:'kitchen12.jpg',)
+spot_twelve.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house12.jpg'), filename:'house12.jpg',)
+spot_twelve.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom12.jpg'), filename:'bedroom12.jpg',)
+
+
+spot_eleven.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom11.jpg'), filename:'bathroom11.jpg',)
+spot_eleven.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft11.jpg'), filename:'loft11.jpg',)
+spot_eleven.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen11.jpg'), filename:'kitchen11.jpg',)
+spot_eleven.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house11.jpg'), filename:'house11.jpg',)
+spot_eleven.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom11.jpg'), filename:'bedroom11.jpg',)
+
+
+spot_ten.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom10.jpg'), filename:'bathroom10.jpg',)
+spot_ten.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft10.jpg'), filename:'loft10.jpg',)
+spot_ten.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen10.jpg'), filename:'kitchen10.jpg',)
+spot_ten.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house10.jpg'), filename:'house10.jpg',)
+spot_ten.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom10.jpg'), filename:'bedroom10.jpg',)
+
+
+spot_nine.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom9.jpg'), filename:'bathroom9.jpg',)
+spot_nine.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft9.jpg'), filename:'loft9.jpg',)
+spot_nine.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen9.jpg'), filename:'kitchen9.jpg',)
+spot_nine.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house9.jpg'), filename:'house9.jpg',)
+spot_nine.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom9.jpg'), filename:'bedroom9.jpg',)
+
+
+spot_eight.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom8.jpg'), filename:'bathroom8.jpg',)
+spot_eight.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft8.jpg'), filename:'loft8.jpg',)
+spot_eight.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen8.jpg'), filename:'kitchen8.jpg',)
+spot_eight.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house8.jpg'), filename:'house8.jpg',)
+spot_eight.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom8.jpg'), filename:'bedroom8.jpg',)
+
+
+spot_seven.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom7.jpg'), filename:'bathroom7.jpg',)
+spot_seven.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft7.jpg'), filename:'loft7.jpg',)
+spot_seven.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen7.jpg'), filename:'kitchen7.jpg',)
+spot_seven.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house7.jpg'), filename:'house7.jpg',)
+spot_seven.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom7.jpg'), filename:'bedroom7.jpg',)
+
+
+spot_six.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom6.jpg'), filename:'bathroom6.jpg',)
+spot_six.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft6.jpg'), filename:'loft6.jpg',)
+spot_six.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen6.jpg'), filename:'kitchen6.jpg',)
+spot_six.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house6.jpg'), filename:'house6.jpg',)
+spot_six.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom6.jpg'), filename:'bedroom6.jpg',)
+
+
+spot_five.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom5.jpg'), filename:'bathroom5.jpg',)
+spot_five.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft5.jpg'), filename:'loft5.jpg',)
+spot_five.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen5.jpg'), filename:'kitchen5.jpg',)
+spot_five.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house5.jpg'), filename:'house5.jpg',)
+spot_five.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom5.jpg'), filename:'bedroom5.jpg',)
+
+
+spot_four.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom4.jpg'), filename:'bathroom4.jpg',)
+spot_four.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft4.jpg'), filename:'loft4.jpg',)
+spot_four.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen4.jpg'), filename:'kitchen4.jpg',)
+spot_four.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house4.jpg'), filename:'house4.jpg',)
+spot_four.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom4.jpg'), filename:'bedroom4.jpg',)
+
+
+spot_three.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom3.jpg'), filename:'bathroom3.jpg',)
+spot_three.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft3.jpg'), filename:'loft3.jpg',)
+spot_three.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen3.jpg'), filename:'kitchen3.jpg',)
+spot_three.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house3.jpg'), filename:'house3.jpg',)
+spot_three.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom3.jpg'), filename:'bedroom3.jpg',)
+
+
+spot_two.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom2.jpg'), filename:'bathroom2.jpg',)
+spot_two.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft2.jpg'), filename:'loft2.jpg',)
+spot_two.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen2.jpg'), filename:'kitchen2.jpg',)
+spot_two.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house2.jpg'), filename:'house2.jpg',)
+spot_two.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom2.jpg'), filename:'bedroom2.jpg',)
+
+
+spot_one.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom1.jpg'), filename:'bathroom1.jpg',)
+spot_one.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft1.jpg'), filename:'loft1.jpg',)
+spot_one.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen1.jpg'), filename:'kitchen1.jpg',)
+spot_one.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house1.jpg'), filename:'house1.jpg',)
+spot_one.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom1.jpg'), filename:'bedroom1.jpg',)
+
+
+spot_twelve.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bathroom12.jpg'), filename:'bathroom12.jpg',)
+spot_twelve.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/loft12.jpg'), filename:'loft12.jpg',)
+spot_twelve.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/kitchen12.jpg'), filename:'kitchen12.jpg',)
+spot_twelve.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/house12.jpg'), filename:'house12.jpg',)
+spot_twelve.photo.attach(io: open('https://s3-us-west-1.amazonaws.com/staybnb-dev/bedroom12.jpg'), filename:'bedroom12.jpg',)

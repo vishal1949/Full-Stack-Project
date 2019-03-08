@@ -4,7 +4,7 @@ class Api::ReviewsController < ApplicationController
         if @review.save
             render :show
         else
-            render json: @review, status: :unprocessable_entity
+            render json: ['Was not able to save']
         end
     end
 
