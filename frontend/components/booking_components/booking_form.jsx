@@ -14,7 +14,7 @@ class BookingForm extends React.Component{
             trip_end: null,
             num_guests: 1,
         }
-        this.adult_count = 0;
+        this.adult_count = 1;
         this.infant_count = 0;
         this.children_count = 0;
 
@@ -69,21 +69,7 @@ class BookingForm extends React.Component{
     }
 
     renderErrors() {
-        // return null;
-        
-        // debugger
         return (<div>{this.props.error}</div>)
-        // if (this.props.errors.length !== 0 ) {
-        //     return (
-        //         <ul id="errors">
-        //             {this.props.errors.map((error, i) => (
-        //                 <li key={`error-${i}`}>
-        //                     {error}
-        //                 </li>
-        //             ))}
-        //         </ul>
-        //     );
-        // }
     }
 
     incrementCount(e, type){
@@ -106,47 +92,27 @@ class BookingForm extends React.Component{
     decrementCount(e, type){
 
         e.preventDefault();
-        // debugger
-        if(this.state.num_guests > 1){
-            this.setState({[this.state.num_guests]: this.state.num_guests--})
-        }
         if(type === 'adult'){
-            if(this.adult_count > 0){
+            if(this.adult_count > 1){
                 this.adult_count--;
-            }else{
-                this.setState({ [this.state.num_guests]: this.state.num_guests++ })
+                this.setState({ [this.state.num_guests]: this.state.num_guests-- })
             }
         }
         if(type === 'child'){
             if (this.children_count > 0) {
                 this.children_count--;
-            } else{
-                this.setState({ [this.state.num_guests]: this.state.num_guests++ })
+                this.setState({ [this.state.num_guests]: this.state.num_guests-- })
+
             }
         }
         if(type === 'infant'){
             if (this.infant_count > 0) {
                 this.infant_count--;
-            } else{
-                this.setState({[this.state.num_guests]: this.state.num_guests++})
+                this.setState({ [this.state.num_guests]: this.state.num_guests-- })
+
             }
         }
     }
-
-    // renderErrors() {
-    //     // return null;
-    //     if (this.props.errors.length !== 0) {
-    //         return (
-    //             <ul id="errors">
-    //                 {this.props.errors.map((error, i) => (
-    //                     <li key={`error-${i}`}>
-    //                         {error}
-    //                     </li>
-    //                 ))}
-    //             </ul>
-    //         );
-    //     }
-    // }
 
     shadeHandler(type){
         // e.preventDefault();
@@ -174,10 +140,6 @@ class BookingForm extends React.Component{
     guestHandler(e){
         e.preventDefault();
         document.getElementsByClassName('find-with')[0].classList.add('dropdown-content')
-        // debugger
-        // this.found = document.getElementsByClassName('find-with');
-        // this.found.classList.add('dropdown-content');
-        // this.found.classList.remove('find-with');
     }
 
     closeHandler(e){
@@ -267,7 +229,7 @@ class BookingForm extends React.Component{
                         </div>
                         
                     </div>
-                    {this.renderErrors()}
+                    <div className='booking-errors'>{this.renderErrors()}</div>
                     <button type='submit' className='request-button'>Request to Book</button>
                     <div className='nocharge'>You won't be charged yet</div>
                     <div className='other-gray-line'></div>

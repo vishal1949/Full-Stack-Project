@@ -153,19 +153,23 @@
     box-sizing: border-box;
     z-index: 1;
 }
-.first-pic:hover, #overlay{
-    opacity: .5;
-    // display: inline-block;
+.first-pic:hover, .opacity-stuff{
+    opacity: .3;
 }
 
 .four-pics{
     display: flex;
     border: 1px solid black;
     overflow: hidden;
-    
-    
 }
 
+.opacity-stuff{
+    background: black;
+    opacity: 0;
+    height: inherit;
+    width: inherit;
+    position: absolute;
+}
 
 
 .second-pic, .third-pic{

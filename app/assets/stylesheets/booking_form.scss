@@ -3,14 +3,14 @@
 .booking-form-box{
     display: block;
     border: 1px solid lightgray;
-    width: 326px;
-    height: 456px;
+    width: 308px;
+    height: 470px;
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 30px;
     padding-left: 24px;
     padding-right: 24px;
-    padding-top: 18px;
+    padding-top: 9px;
     padding-bottom: 18px;
     position: sticky;
     top: 25px;
@@ -53,9 +53,6 @@
     padding-top: 20px;
 }
 
-.booking-form{
-    // display: flex;
-}
 
 .guest-button{
     display: flex;
@@ -215,4 +212,12 @@
 
 .lighten{
     color: rgb(198,225,226)
+}
+
+.booking-errors{
+    color: red;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: -8px;
 }

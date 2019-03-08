@@ -36,7 +36,7 @@ class Search extends React.Component{
         return(
             <div>
                 <form onSubmit={(e) => this.handleSubmit(e)} >
-                    <input className='main-search-bar' type='text' value={this.searchField} placeholder='    Search' onChange={this.update('searchField')}/>
+                    <input className='main-search-bar' type='text' value={this.searchField} placeholder='Search' onChange={this.update('searchField')}/>
                 </form>
             </div>
         )

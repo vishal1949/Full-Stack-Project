@@ -110,12 +110,24 @@ class ListingShow extends React.Component{
                     <div className='first-img-stuff'><img className='first-pic' src={this.props.listing.photo[0].picUrl} alt="" /></div>
                     <div>
                         <div className='four-pics'>
-                            <div className='second-pic'><img className='second-pic-img' src={this.props.listing.photo[1].picUrl} alt="" /></div>
-                            <div className='second-pic'><img className='second-pic-img' src={this.props.listing.photo[2].picUrl} alt=""/></div>
+                            <div className='second-pic'>
+                                <div className='opacity-stuff'></div>
+                                <img className='second-pic-img opac' src={this.props.listing.photo[1].picUrl} alt="" />
+                            </div>
+                            <div className='second-pic'>
+                                <div className='opacity-stuff'></div>
+                                <img className='second-pic-img opac' src={this.props.listing.photo[2].picUrl} alt=""/>
+                            </div>
                         </div>    
                         <div className='four-pics'>
-                            <div className='second-pic'><img className='second-pic-img' src={this.props.listing.photo[3].picUrl} alt="" /></div>
-                            <div className='second-pic'><img className='second-pic-img' src={this.props.listing.photo[4].picUrl} alt=""/></div>
+                            <div className='second-pic'>
+                                <div className='opacity-stuff'></div>
+                                <img className='second-pic-img opac' src={this.props.listing.photo[3].picUrl} alt="" />
+                                </div>
+                            <div className='second-pic'>
+                                <div className='opacity-stuff'></div>
+                                <img className='second-pic-img opac' src={this.props.listing.photo[4].picUrl} alt=""/>
+                            </div>
                         </div>
                     </div>    
                 </div>
