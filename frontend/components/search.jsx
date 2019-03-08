@@ -25,7 +25,7 @@ class Search extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
+        // debugger
         this.props.newSearch(this.state.searchField);
         this.props.history.push('/listings');
     }

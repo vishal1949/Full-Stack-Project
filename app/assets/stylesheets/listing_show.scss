@@ -31,11 +31,18 @@
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
 
 }
+.home-icon-word{
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    padding-left: 20px;
+}
 
 .icon-hometype{
     display: flex;
     font-weight: 500;
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+}
+.thisforflex{
+    display: flex;
 }
 
 .sizing{
@@ -89,6 +96,7 @@
 .icontest2{
     padding-left: 13px;
     font-size: 14px;
+    font-weight: 600;
 }
 
 .gray-line{
@@ -153,9 +161,6 @@
     box-sizing: border-box;
     z-index: 1;
 }
-.first-pic:hover, .opacity-stuff{
-    opacity: .3;
-}
 
 .four-pics{
     display: flex;
@@ -163,13 +168,7 @@
     overflow: hidden;
 }
 
-.opacity-stuff{
-    background: black;
-    opacity: 0;
-    height: inherit;
-    width: inherit;
-    position: absolute;
-}
+
 
 
 .second-pic, .third-pic{

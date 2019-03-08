@@ -12,7 +12,7 @@ class HomeSplash extends Component {
             <div id='background-splash'>
                 {/* <p>hELOO</p> */}
                 <ExploreTab/>
-                <h2 className='recomended-for-you'> Introducing Staybnb PLus</h2>
+                <h2 className='recomended-for-you'> Introducing Staybnb Plus</h2>
                 <div className='new-selection'>A new selection of homes verified for quality and comfort</div>
                 <img className='introduce-splash' src={window.images.splashPage} alt=""/>
 

@@ -145,8 +145,11 @@ class ListingShow extends React.Component{
                     </div>
                     <div className='sections'>
                         <div className='icon-hometype'>
-                            <div className='fa fa-home sizing'></div>
-                            <div className='icontest'>{this.homeType()}</div>
+                            <div className ='thisforflex'>
+                                <div className='fa fa-home sizing'></div>
+                                <div className='icontest2'>{this.homeType()}</div>
+                            </div>
+                            {/* <div className='icontest'>{this.homeType()}</div> */}
                         </div>
                         <div className='bed-bath'>
                             <div>{this.props.listing.num_rooms} guest</div>
@@ -155,10 +158,12 @@ class ListingShow extends React.Component{
                         </div>
                     </div>
                     <div className='icon-hometype'>
-                        <i className="fas fa-map-marker-alt sizing alone-icon"></i>
-                        <div className='icontest2'>Great Location</div> 
+                            <div className='thisforflex'>
+                                <i className="fas fa-map-marker-alt sizing alone-icon"></i>
+                                <div className='icontest2'>Great Location</div> 
+                            </div>
                     </div>
-                        <div className='description'>This place is located at {this.props.listing.address}
+                        <div className='description'>This place is located at {this.props.listing.address}. This place has been loved and visited because of its prime location in {this.props.listing.city}.
                     </div>
                     <div className='gray-line'></div>
                     <p className='description-full'>

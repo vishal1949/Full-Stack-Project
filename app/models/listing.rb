@@ -31,8 +31,7 @@ class Listing < ApplicationRecord
     
     validates :address, uniqueness: true
     validates :owner_id, :title, :city, :state, :zip, presence: true
-    validate :full_address
-    after_validation :geocode 
+  
 
     # validates :num_rooms, :num_bathrooms, :price,
     #     :description, :private_room, :house, :washer, :dryer, 
@@ -53,11 +52,7 @@ class Listing < ApplicationRecord
 
     has_many_attached :photo
 
-    def full_address
-        # debugger
-        self.full_address = Booking.address + " " + Booking.city + " " + Booking.zip
-        return self.full_address 
-    end
+
 
 
     def self.in_bounds(bounds)
