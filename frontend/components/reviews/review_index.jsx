@@ -35,7 +35,7 @@ class ReviewIndexItem extends React.Component{
                         <span className="fa fa-star checked size "></span>
                         <span className="fa fa-star checked size "></span>
                         <span className="fa fa-star checked size "></span>
-                        <span className="fa fa-star checked size "></span>
+                        <span className="fa fa-star  size "></span>
                         <span className="fa fa-star  size "></span>
                     </div>
                 )
