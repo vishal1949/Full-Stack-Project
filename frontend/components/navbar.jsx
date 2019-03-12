@@ -20,7 +20,7 @@ class Navbar extends React.Component{
         this.handleEvent = this.handleEvent.bind(this);
         this.logout = this.logout.bind(this);
         this.handleDates = this.handleDates.bind(this);
-        debugger
+        // debugger
     }
 
     handleEvent(e){

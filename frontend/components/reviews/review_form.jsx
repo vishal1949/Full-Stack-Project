@@ -22,15 +22,21 @@ class ReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const listingId = parseInt(this.props.match.params.listingId);
-        const review = Object.assign({}, this.state, {
+        // debugger
+        // if(this.props.currentUser.id === undefined){  // ADDED THIS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        //     //goal is to do Review.user to get user
+        //     alert("Must sign in before leaving a review")
+        // }else{
+            const review = Object.assign({}, this.state, {
             listing_id: listingId,
             user_id: this.props.currentUserId
-
-        });
-        // debugger
-        this.props.createReview(review);
-        this.setState({body: ' '})
-        this.navigateToListingShow();
+                //MAYBE YOU CAN PASS IN CURRENT USER <<<<<<<<<<<<<<<<<<<<<<<<
+            });
+            // debugger
+            this.props.createReview(review);
+            this.setState({body: ' '})
+            this.navigateToListingShow();
+        // }
     }
 
     update(property) {

@@ -4,6 +4,7 @@ import ReviewIndex from './review_index'
 
 const mapStateToProps = (state, ownProps) => {
     let reviews = [];
+    let currentUser = state.entities.users;
     // debugger
     let listingId = ownProps.listingId;
     let result = Object.values(state.entities.reviews)
@@ -13,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
         }
     });
     return({
-        reviews
+        reviews,
+        currentUser
     })
 }
 

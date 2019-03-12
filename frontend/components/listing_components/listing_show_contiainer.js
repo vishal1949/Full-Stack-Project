@@ -7,9 +7,11 @@ const mapStateToProps = (state, ownProps) => {
     // debugger
     let listingId = parseInt(ownProps.match.params.listingId);
     let listing = state.entities.listings[listingId]
+    let currentUser = state.entities.users;
     return({
         listingId,
-        listing
+        listing,
+        currentUser
     })
 }
 

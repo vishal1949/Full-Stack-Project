@@ -49,6 +49,7 @@ class ListingShow extends React.Component{
         this.state = {
             empty: ''
         }
+        this.checkForReviews = this.checkForReviews.bind(this);
     }
     
     componentDidMount() {
@@ -96,6 +97,22 @@ class ListingShow extends React.Component{
             return "it doest work"
         }
     }
+
+    checkForReviews(){
+        if (!this.props.currentUser) {
+            return(
+                <div>Must be logged in to review this listing</div>
+            )
+        }
+        else {
+            return(
+                // <ReviewIndexContainer listingId={this.props.listing.id} currentUser={this.props.currentUser}/>
+                console.log(this.props.currentUser)
+            )
+        }
+
+    }
+
 
 
     render(){
@@ -182,7 +199,8 @@ class ListingShow extends React.Component{
                     {/* <div className='amenities'>Availability</div> */}
                     {/* <ListingDetail listing={this.props.listing}  /> */}
                     <ReviewFormContainer />
-                    <ReviewIndexContainer listingId={this.props.listing.id}/>
+                    {/* {this.checkForReviews} */}
+                    <ReviewIndexContainer listingId={this.props.listing.id }/>
                     <div id='show-map'>
                         <ListingMap />
                     </div>

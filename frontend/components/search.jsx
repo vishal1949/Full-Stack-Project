@@ -14,7 +14,7 @@ class Search extends React.Component{
             searchField: '',
             empty: ''
         }
-        debugger
+        // debugger
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 

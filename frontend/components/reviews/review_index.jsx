@@ -63,9 +63,16 @@ class ReviewIndexItem extends React.Component{
     }
 
     render(){
-        return(
-            <div>
+        if(!this.props.user){
+            return(
+                <div>Must be signed in for reviews</div>
+            )
+        }else{
 
+        return(
+
+            //should try implementing review.user.id or whatever because we have connections
+            <div>
                 <div className='doing-flex'>
                     <div className='user review-user'></div>
                     <div>
@@ -80,6 +87,7 @@ class ReviewIndexItem extends React.Component{
             </div>
         )
     }
+}
     
 }
 
@@ -98,16 +106,21 @@ class ReviewIndex extends React.Component{
 
     render(){
         // debugger
+        if(!this.props.currentUser){
+            return null;
+        }else{
+
         return(
             <div>
                 <div className='gray-line'></div>
                 <h2 className='check-review'>Check the reviews</h2>
                 {this.props.reviews.map((review) => {
-                    return <ReviewIndexItem key={review.id} review={review} user={currentUser}/>
+                    return <ReviewIndexItem key={review.id} review={review} user={this.props.currentUser}/>
                 })}
             </div>
         )
     }
+}
 }
 
 export default ReviewIndex
