@@ -65,8 +65,7 @@ class SessionForm extends React.Component {
     else {
       return (
         <div>
-          <h2>Log in to continue</h2>
-          <a className="facebook-link" href='https://www.facebook.com/'><b>Log in with Facebook</b></a>
+          <h2 className='login-to-continue'>Log in to continue</h2>
         </div>
       )
     }

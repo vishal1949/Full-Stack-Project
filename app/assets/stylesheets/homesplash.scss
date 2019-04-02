@@ -5,12 +5,12 @@ div#background-splash{
     background-repeat: no-repeat;
     margin-top: 50px;
     margin-left: 80px;
-    margin-right: 20px;
+    margin-right: 80px;
 }
 
 
 .introduce-splash{
-    width: 1740px;
+    width: 90%;
     height: 300px;
 }
 
@@ -24,6 +24,8 @@ div#background-splash{
 .recommend-flex{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    width: 91%;
 }
 
 .recomended-for-you{
