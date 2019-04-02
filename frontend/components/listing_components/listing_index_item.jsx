@@ -27,7 +27,6 @@ class ListingIndexItem extends React.Component{
     startCount(){
         //eventually will need reviews!
     }
-
     render(){
         return(
             <Link to={`listings/${this.props.listing.id}`} className="listing-index-item">
@@ -50,6 +49,7 @@ class ListingIndexItem extends React.Component{
             </Link>
         )
     }
+    
 }
 
 export default ListingIndexItem
