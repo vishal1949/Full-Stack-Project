@@ -128,29 +128,23 @@ class ListingShow extends React.Component{
         return(
             <div>
                 <div className='entire-imgs'>
-                    <div className='first-img-stuff'><img className='first-pic' src={this.props.listing.photo[0].picUrl} alt="" /></div>
-                    <div>
-                        <div className='four-pics'>
-                            <div className='second-pic'>
-                                <div className='opacity-stuff'></div>
-                                <img className='second-pic-img opac' src={this.props.listing.photo[1].picUrl} alt="" />
-                            </div>
-                            <div className='second-pic'>
-                                <div className='opacity-stuff'></div>
-                                <img className='second-pic-img opac' src={this.props.listing.photo[2].picUrl} alt=""/>
-                            </div>
-                        </div>    
-                        <div className='four-pics'>
-                            <div className='second-pic'>
-                                <div className='opacity-stuff'></div>
-                                <img className='second-pic-img opac' src={this.props.listing.photo[3].picUrl} alt="" />
-                                </div>
-                            <div className='second-pic'>
-                                <div className='opacity-stuff'></div>
-                                <img className='second-pic-img opac' src={this.props.listing.photo[4].picUrl} alt=""/>
-                            </div>
+                    <div className='first-img-stuff'>
+                        <img className='first-pic' src={this.props.listing.photo[0].picUrl} alt="" />
+                    </div>
+                    <div id='img-grid'>
+                        <div className='grid-holder'>
+                            <img className='img-one' src={this.props.listing.photo[1].picUrl} alt="" />
                         </div>
-                    </div>    
+                        <div className='grid-holder'>
+                            <img className='img-two' src={this.props.listing.photo[2].picUrl} alt="" />
+                        </div>
+                        <div className='grid-holder'>
+                            <img className='img-three' src={this.props.listing.photo[3].picUrl} alt="" />
+                        </div>
+                        <div className='grid-holder'>
+                            <img className='img-four' src={this.props.listing.photo[4].picUrl} alt="" />
+                        </div>
+                    </div>
                 </div>
             <div className='includes-booking'>
                 <div className="entire-info">

@@ -134,27 +134,36 @@
 
 }
 
+
 .entire-imgs{
-    display: flex;
-    height: 590px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    overflow: hidden;
+}
+
+#img-grid{
+    display: grid;
+    grid-template-rows: 50% 50%; 
+    grid-template-columns: 50% 50%; 
+    overflow: hidden;
+}
+
+.grid-holder{
     width: 100%;
+    height: 100%;
+    border: 3px solid black;
     overflow: hidden;
-    border: 1px solid black;
-    box-sizing: border-box;
 }
+
 .first-img-stuff{
-    height: inherit;
-    width: 948px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
-
-
-
 
 .first-pic{
     display: inline-block; 
     width: inherit;
-    // border: 1px solid black;
     height: inherit;
     transition: transform .5s;
     overflow: hidden; 
@@ -162,42 +171,61 @@
     z-index: 1;
 }
 
-.four-pics{
-    display: flex;
-    border: 1px solid black;
-    overflow: hidden;
-}
-
-
-
-
-.second-pic, .third-pic{
-    display: inline-block; 
-    width: 474px;
-    height: 294px;
-    transition: transform .3s;
-    overflow: hidden;
-    box-sizing: border-box;
-
-}
-
-.second-pic-img{
-    width: inherit;
-    height: inherit;
-    z-index: 2;
-    transition: transform .5s;
-}
-
 .first-pic:hover{
     transform: scale(1.05);
-    overflow: hidden; 
-    
+    // overflow: hidden; 
 }
 
-.second-pic-img:hover{
+.img-one{
+    display: inline-block; 
+    width: inherit;
+    height: inherit;
+    transition: transform .5s;
+    overflow: hidden; 
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.img-one:hover{
     transform: scale(1.05);
 }
 
+.img-two{
+    display: inline-block; 
+    width: 100%;
+    height: 100%;
+    transition: transform .5s;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.img-two:hover{
+    transform: scale(1.05);
+}
+.img-three{
+    display: inline-block; 
+    width: 100%;
+    height: 100%;
+    transition: transform .5s;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.img-three:hover{
+    transform: scale(1.05);
+}
+.img-four{
+    display: inline-block; 
+    width: 100%;
+    height: 100%;
+    transition: transform .5s;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.img-four:hover{
+    transform: scale(1.05);
+}
 
 .elements-amen{
     display: flex;
