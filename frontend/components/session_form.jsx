@@ -116,7 +116,6 @@ class SessionForm extends React.Component {
             <br/>
             <div id='signup-form'>
               <button id="session-submit" type="submit" >{this.props.formType}</button>
-              {/* <div id='or-line-combo'></div> */}
               <div id='or'>or</div>
               <button id='session-submit' type='submit' onClick={this.demoLogin}>Demo login</button>
             </div>
